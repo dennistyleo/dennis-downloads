@@ -105,3 +105,20 @@ a:hover{text-decoration:underline}
 .card:hover {
   box-shadow: 0 0 40px rgba(176,141,87,0.3);
 }
+.content.card a {
+  display:inline-block;
+  margin:6px 0;
+  padding:6px 10px;
+  border:1px solid rgba(57,255,20,.25);
+  border-radius:10px;
+  background:rgba(57,255,20,.06);
+  font-weight:500;
+}
+.content.card a:hover {
+  background:rgba(57,255,20,.15);
+}
+.footer { 
+  text-align:right;
+  font-size:11px;
+  color:rgba(159,176,195,.6);
+}
