@@ -5,15 +5,17 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>{{ page.title | default: "Downloads" }} · Dennis Downloads</title>
 
-  <!-- Cache-bust: 改版號就一定會更新 -->
-  <link rel="stylesheet" href="/assets/css/site.css?v=20260115-02">
+  <!-- 加版本號避免快取 -->
+  <link rel="stylesheet" href="/assets/css/site.css?v=20260115-03">
 </head>
 
 <body>
   <div class="topbar">
     <div class="brand">
-      <!-- 先用穩定的文字 Mark，避免 logo 圖被拉伸走樣 -->
-      <div class="mark">DL</div>
+      <!-- 改成真正 logo -->
+      <div class="mark">
+        <img src="/assets/logo.png?v=20260115-03" alt="Dennis Leo Logo">
+      </div>
       <div class="brandtext">
         <div class="name">Dennis Leo</div>
         <div class="sub">Official Downloads Hub</div>
