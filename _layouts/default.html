@@ -3,19 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>{{ page.title | default: "Downloads" }} · Dennis Downloads</title>
+  <title>{{ page.title }} · Dennis Downloads</title>
 
-  <!-- 加版本號避免快取 -->
-  <link rel="stylesheet" href="/assets/css/site.css?v=20260115-03">
+  <!-- CACHE-BUST: 改這個版本號就能強制刷新 CSS -->
+  <link rel="stylesheet" href="/assets/css/site.css?v=20260115-06">
 </head>
 
 <body>
   <div class="topbar">
     <div class="brand">
-      <!-- 改成真正 logo -->
-      <div class="mark">
-        <img src="/assets/logo.png?v=20260115-03" alt="Dennis Leo Logo">
-      </div>
+      <!-- CACHE-BUST: 改版本號可強制刷新 logo -->
+      <img class="logo" src="/assets/logo.png?v=20260115-06" alt="Dennis Leo" />
       <div class="brandtext">
         <div class="name">Dennis Leo</div>
         <div class="sub">Official Downloads Hub</div>
@@ -23,14 +21,15 @@
     </div>
 
     <div class="actions">
-      <a class="btn ghost" href="https://dennisleo.com/watchers-over-the-frontiers-of-innovation" target="_blank" rel="noopener">Main Site</a>
-      <a class="btn" href="mailto:dennis@dennisleo.com">Contact</a>
+      <a class="btn ghost" href="https://dennisleo.com/watchers-over-the-frontiers-of-innovation"
+         target="_blank" rel="noopener">Main Site</a>
+      <a class="btn primary" href="mailto:dennis@dennisleo.com">Contact</a>
     </div>
   </div>
 
   <main class="container">
     <section class="hero">
-      <h1>{{ page.h1 | default: page.title | default: "Downloads" }}</h1>
+      <h1>{{ page.h1 | default: page.title }}</h1>
       <p class="lead">{{ page.lead | default: "Clean. Versioned. No spam. No confusion." }}</p>
     </section>
 
