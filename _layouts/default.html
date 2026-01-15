@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>{{ page.title }} · Dennis Downloads</title>
 
-  <!-- CACHE-BUST: 改這個版本號就能強制刷新 CSS -->
-  <link rel="stylesheet" href="/assets/css/site.css?v=20260115-06">
+  <!-- CACHE-BUST：每次改版就改 v= 后面那串 -->
+  <link rel="stylesheet" href="/assets/css/site.css?v=20260115-07">
 </head>
 
 <body>
   <div class="topbar">
     <div class="brand">
-      <!-- CACHE-BUST: 改版本號可強制刷新 logo -->
-      <img class="logo" src="/assets/logo.png?v=20260115-06" alt="Dennis Leo" />
+      <!-- logo 路径固定放 /assets/logo.png -->
+      <img class="logo" src="/assets/logo.png?v=20260115-07" alt="Dennis Leo" />
       <div class="brandtext">
         <div class="name">Dennis Leo</div>
         <div class="sub">Official Downloads Hub</div>
@@ -21,9 +21,12 @@
     </div>
 
     <div class="actions">
-      <a class="btn ghost" href="https://dennisleo.com/watchers-over-the-frontiers-of-innovation"
+      <a class="btn ghost"
+         href="https://dennisleo.com/watchers-over-the-frontiers-of-innovation"
          target="_blank" rel="noopener">Main Site</a>
-      <a class="btn primary" href="mailto:dennis@dennisleo.com">Contact</a>
+
+      <a class="btn primary"
+         href="mailto:dennis@dennisleo.com">Contact</a>
     </div>
   </div>
 
@@ -37,9 +40,7 @@
       {{ content }}
     </section>
 
-    <footer class="footer">
-      <div>© {{ "now" | date: "%Y" }} Dennis Leo · downloads.dennisleo.com</div>
-    </footer>
+    <div class="footer">© {{ "now" | date: "%Y" }} Dennis Leo · downloads.dennisleo.com</div>
   </main>
 </body>
 </html>
