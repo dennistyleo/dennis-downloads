@@ -98,3 +98,10 @@ a:hover{text-decoration:underline}
   padding:10px 4px 0;
   border-top:1px solid rgba(176,141,87,.18);
 }
+.card {
+  box-shadow: 0 0 25px rgba(176,141,87,0.15);
+  transition: box-shadow .3s ease;
+}
+.card:hover {
+  box-shadow: 0 0 40px rgba(176,141,87,0.3);
+}
