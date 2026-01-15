@@ -1,3 +1,22 @@
+---
+layout: default
+title: Downloads
+h1: Downloads
+lead: Official download hub for DennisLeo.com — clean, versioned, no spam, no confusion.
+---
+
+## Whitepapers
+
+- [XR Ecosystem Overview (PDF)](PUT_YOUR_LINK_HERE)
+- [XR-VPP Spec Pack (ZIP)](PUT_YOUR_LINK_HERE)
+
+## Demos / Assets
+
+- [PNL-COO MVP Demo (ZIP)](PUT_YOUR_LINK_HERE)
+- [Brand Kit (ZIP)](PUT_YOUR_LINK_HERE)
+
+**Support / Contact:** [dennis@dennisleo.com](mailto:dennis@dennisleo.com)
+
 # Downloads
 
 > Official download hub for DennisLeo.com  
