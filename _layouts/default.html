@@ -1,43 +1,44 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>{{ page.title }} · Dennis Downloads</title>
-    <link rel="stylesheet" href="{{ '/assets/css/site.css?v=2' | relative_url }}" />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{ page.title | default: "Downloads" }} · Dennis Downloads</title>
 
-  <body>
-    <div class="topbar">
-      <div class="brand">
-        <div class="mark">
-          <img src="{{ '/assets/img/logo.png' | relative_url }}" alt="Dennis Leo logo">
-        </div>
-        <div class="brandtext">
-          <div class="name">Dennis Leo</div>
-          <div class="sub">Official Downloads Hub</div>
-        </div>
-      </div>
+  <!-- Cache-bust: 改版號就一定會更新 -->
+  <link rel="stylesheet" href="/assets/css/site.css?v=20260115-02">
+</head>
 
-      <div class="actions">
-        <a class="btn ghost" href="https://dennisleo.com/watchers-over-the-frontiers-of-innovation" target="_blank" rel="noopener">Main Site</a>
-        <a class="btn" href="mailto:dennis@dennisleo.com">Contact</a>
+<body>
+  <div class="topbar">
+    <div class="brand">
+      <!-- 先用穩定的文字 Mark，避免 logo 圖被拉伸走樣 -->
+      <div class="mark">DL</div>
+      <div class="brandtext">
+        <div class="name">Dennis Leo</div>
+        <div class="sub">Official Downloads Hub</div>
       </div>
     </div>
 
-    <main class="container">
-      <section class="hero">
-        <h1>{{ page.h1 | default: page.title }}</h1>
-        <p class="lead">{{ page.lead | default: "Clean. Versioned. No spam. No confusion." }}</p>
-      </section>
+    <div class="actions">
+      <a class="btn ghost" href="https://dennisleo.com/watchers-over-the-frontiers-of-innovation" target="_blank" rel="noopener">Main Site</a>
+      <a class="btn" href="mailto:dennis@dennisleo.com">Contact</a>
+    </div>
+  </div>
 
-      <section class="content card">
-        {{ content }}
-      </section>
+  <main class="container">
+    <section class="hero">
+      <h1>{{ page.h1 | default: page.title | default: "Downloads" }}</h1>
+      <p class="lead">{{ page.lead | default: "Clean. Versioned. No spam. No confusion." }}</p>
+    </section>
 
-      <footer class="footer">
-        <div>© {{ "now" | date: "%Y" }} Dennis Leo · downloads.dennisleo.com</div>
-      </footer>
-    </main>
-  </body>
+    <section class="content card">
+      {{ content }}
+    </section>
+
+    <footer class="footer">
+      <div>© {{ "now" | date: "%Y" }} Dennis Leo · downloads.dennisleo.com</div>
+    </footer>
+  </main>
+</body>
 </html>
