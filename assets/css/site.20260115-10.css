@@ -1,0 +1,295 @@
+/* =========================================================
+   Dennis Downloads Hub - VERSIONED CSS
+   File: /assets/css/site.20260115-10.css
+   Strategy:
+   - Namespace: body.dlhub ...
+   - High specificity + selective !important (extension-proof)
+   - Stable baseline + premium skin
+   ========================================================= */
+
+:root{
+  --bg:#0b0c0f;
+  --panel:#111319;
+  --text:#e8e8e8;
+  --muted:#a0b0c0;
+
+  --gold:#b08d2a;
+  --gold2:#d2b15a;
+
+  --neon:#39ff14;
+  --line:rgba(176,141,42,.35);
+  --shadow:0 18px 60px rgba(0,0,0,.55);
+
+  --radius:18px;
+  --max:980px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+
+body.dlhub{
+  margin:0;
+  color:var(--text);
+  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+  background:
+    radial-gradient(1200px 600px at 20% 0%, rgba(57,255,20,.10), transparent 55%),
+    radial-gradient(900px 520px at 85% 10%, rgba(210,177,90,.10), transparent 60%),
+    var(--bg);
+}
+
+/* Base link (baseline usable even if all fancy styles fail) */
+body.dlhub a{color:var(--neon);text-decoration:none}
+body.dlhub a:hover{text-decoration:underline}
+
+/* ===== Topbar ===== */
+body.dlhub .topbar{
+  position:sticky;
+  top:0;
+  z-index:50;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:14px 22px;
+
+  background:rgba(11,12,15,.65);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+
+body.dlhub .brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:240px;
+}
+
+body.dlhub .logo{
+  width:34px;
+  height:34px;
+  border-radius:10px;
+  object-fit:contain;
+  background:rgba(0,0,0,.35);
+  border:1px solid rgba(176,141,42,.35);
+  box-shadow:0 8px 18px rgba(0,0,0,.45);
+}
+
+body.dlhub .name{font-weight:700;font-size:15px}
+body.dlhub .sub{font-size:12px;color:var(--muted);margin-top:2px}
+
+body.dlhub .actions{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+/* ===== Buttons (Topbar) ===== */
+body.dlhub .btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px 14px;
+  border-radius:14px;
+  border:1px solid var(--gold2);
+  background:rgba(176,141,42,.08);
+  color:var(--text);
+  font-size:14px;
+  line-height:1;
+  font-weight:600;
+
+  transition:
+    transform .15s ease,
+    box-shadow .15s ease,
+    background .15s ease,
+    border-color .15s ease,
+    color .15s ease;
+  text-decoration:none;
+}
+
+body.dlhub .btn:hover{
+  background:rgba(176,141,42,.18);
+  box-shadow:0 10px 26px rgba(0,0,0,.22);
+  transform:translateY(-1px);
+  text-decoration:none;
+}
+
+body.dlhub .btn:active{transform:translateY(0)}
+
+body.dlhub .btn.ghost{
+  background:transparent;
+  color:var(--gold2);
+  border-color:rgba(176,141,42,.55);
+  box-shadow:none;
+}
+
+body.dlhub .btn.ghost:hover{
+  background:rgba(176,141,42,.10);
+  box-shadow:0 10px 26px rgba(0,0,0,.22);
+}
+
+/* Contact: Neon Primary (LED / engraved feel) */
+body.dlhub .btn.primary{
+  background:linear-gradient(180deg,
+    rgba(57,255,20,.98) 0%,
+    rgba(57,255,20,.72) 58%,
+    rgba(12,48,14,.60) 100%);
+  color:#061606;
+  border-color:rgba(57,255,20,.95);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.22),
+    inset 0 -12px 22px rgba(0,0,0,.36),
+    0 0 0 1px rgba(57,255,20,.20),
+    0 14px 34px rgba(0,0,0,.55),
+    0 0 24px rgba(57,255,20,.28);
+}
+
+body.dlhub .btn.primary:hover{
+  background:linear-gradient(180deg,
+    rgba(57,255,20,1) 0%,
+    rgba(57,255,20,.80) 60%,
+    rgba(12,48,14,.55) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.25),
+    inset 0 -14px 26px rgba(0,0,0,.38),
+    0 0 0 1px rgba(57,255,20,.25),
+    0 18px 42px rgba(0,0,0,.60),
+    0 0 30px rgba(57,255,20,.32);
+  transform:translateY(-1px);
+}
+
+body.dlhub .btn:focus-visible{
+  outline:2px solid rgba(57,255,20,.55);
+  outline-offset:3px;
+}
+
+/* ===== Layout ===== */
+body.dlhub .container{
+  max-width:var(--max);
+  margin:40px auto;
+  padding:0 20px;
+}
+
+body.dlhub .hero{
+  background:linear-gradient(to bottom right, rgba(17,19,25,.86), rgba(17,19,25,.52));
+  padding:24px;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  margin-bottom:24px;
+}
+
+body.dlhub h1{margin:0 0 8px 0;font-size:34px;letter-spacing:.2px}
+body.dlhub .lead{margin:0;color:var(--muted);font-size:14px}
+
+body.dlhub .card{
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:linear-gradient(to bottom right, rgba(17,19,25,.86), rgba(17,19,25,.52));
+  padding:24px;
+  box-shadow:var(--shadow);
+}
+
+body.dlhub .card h2{
+  margin:0 0 14px 0;
+  font-size:22px;
+}
+
+body.dlhub .card hr{
+  border:none;
+  border-top:1px solid rgba(176,141,42,.25);
+  margin:18px 0;
+}
+
+/* Baseline list (if button override doesn't apply, still readable) */
+body.dlhub .card ul{ margin:10px 0 0 18px; }
+body.dlhub .card li{ margin:8px 0; }
+
+body.dlhub .footer{
+  margin-top:40px;
+  text-align:center;
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* Small screens */
+@media (max-width:720px){
+  body.dlhub .topbar{flex-wrap:wrap}
+  body.dlhub .brand{min-width:auto}
+}
+
+/* =========================================================
+   DOWNLOAD AREA: FORCE "LINKS AS BUTTONS"
+   Target: <section class="content card"> ... <ul><li><a>...</a></li></ul>
+   This is intentionally strong to resist extension injected CSS.
+   ========================================================= */
+
+html body.dlhub main.container section.content.card ul{
+  list-style:none !important;
+  padding-left:0 !important;
+  margin:12px 0 0 !important;
+}
+
+html body.dlhub main.container section.content.card ul li{
+  margin:10px 0 !important;
+}
+
+/* Make ALL list links inside content.card become "download buttons" */
+html body.dlhub main.container section.content.card ul li > a{
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:10px !important;
+
+  padding:10px 14px !important;
+  border-radius:12px !important;
+
+  border:1px solid rgba(210,177,90,.55) !important;
+  background:rgba(17,19,25,.55) !important;
+
+  color:var(--neon) !important;
+  text-decoration:none !important;
+
+  box-shadow:0 10px 26px rgba(0,0,0,.22) !important;
+
+  transition:
+    transform .15s ease,
+    box-shadow .15s ease,
+    background .15s ease,
+    border-color .15s ease,
+    color .15s ease !important;
+}
+
+html body.dlhub main.container section.content.card ul li > a:hover{
+  background:rgba(57,255,20,.10) !important;
+  border-color:rgba(57,255,20,.55) !important;
+  transform:translateY(-1px) !important;
+  box-shadow:0 16px 40px rgba(0,0,0,.45) !important;
+  text-decoration:none !important;
+}
+
+html body.dlhub main.container section.content.card ul li > a:focus-visible{
+  outline:2px solid rgba(57,255,20,.55) !important;
+  outline-offset:3px !important;
+}
+
+/* Make mailto inside content.card also look consistent */
+html body.dlhub main.container section.content.card a[href^="mailto:"]{
+  display:inline-flex !important;
+  align-items:center !important;
+
+  padding:8px 12px !important;
+  border-radius:12px !important;
+
+  border:1px solid rgba(210,177,90,.45) !important;
+  background:rgba(17,19,25,.45) !important;
+
+  box-shadow:0 10px 26px rgba(0,0,0,.18) !important;
+  text-decoration:none !important;
+}
+
+html body.dlhub main.container section.content.card a[href^="mailto:"]:hover{
+  background:rgba(57,255,20,.08) !important;
+  border-color:rgba(57,255,20,.45) !important;
+  transform:translateY(-1px) !important;
+  box-shadow:0 14px 34px rgba(0,0,0,.35) !important;
+}
