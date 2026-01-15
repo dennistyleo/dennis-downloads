@@ -211,3 +211,38 @@ h1{margin:0 0 8px 0;font-size:34px;letter-spacing:.2px}
   .topbar{flex-wrap:wrap}
   .brand{min-width:auto}
 }
+/* ===== Download link buttons inside content card ===== */
+.content.card ul{
+  list-style:none;
+  padding-left:0;
+  margin:12px 0 0;
+}
+.content.card li{
+  margin:10px 0;
+}
+
+.content.card li a{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 14px;
+  border-radius:12px;
+  border:1px solid rgba(210,177,90,.55);
+  background:rgba(17,19,25,.55);
+  color:var(--neon);
+  text-decoration:none;
+  box-shadow:0 10px 26px rgba(0,0,0,.22);
+  transition:transform .15s, box-shadow .15s, background .15s, border-color .15s, color .15s;
+}
+
+.content.card li a:hover{
+  background:rgba(57,255,20,.10);
+  border-color:rgba(57,255,20,.55);
+  transform:translateY(-1px);
+  box-shadow:0 16px 40px rgba(0,0,0,.45);
+}
+
+.content.card li a:focus-visible{
+  outline:2px solid rgba(57,255,20,.55);
+  outline-offset:3px;
+}
