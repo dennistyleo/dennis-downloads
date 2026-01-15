@@ -1,2 +1,17 @@
 title: Dennis Downloads
 markdown: kramdown
+
+# 你是自訂網域 downloads.dennisleo.com，所以 baseurl 留空
+baseurl: ""
+url: "https://downloads.dennisleo.com"
+
+# 不用 GitHub 內建 theme（避免干擾）
+theme: null
+
+# 保險：確保 _layouts 被打包
+include:
+  - _layouts
+  - assets
+
+# 可選：讓網址乾淨（不一定需要）
+permalink: pretty
