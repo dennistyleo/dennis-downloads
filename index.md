@@ -55,4 +55,3 @@ lead: >-
 - <a href="/assets/kit/dlhub-brand-kit-20260115-v01.zip" download="dlhub-brand-kit-20260115-v01.zip">Brand Kit (ZIP)</a>
 
 ---
-
