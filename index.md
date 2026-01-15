@@ -14,9 +14,9 @@ lead: >-
 
 ## Featured Documents
 
-- [XR Ecosystem — Overview (PDF)](/assets/docs/dlhub-xr-wp-ecosystem-overview-pdf-20260115-v01.pdf)
-- [XR Ecosystem — Roadmap & Vision (PDF)](/assets/docs/dlhub-xr-wp-roadmap-vision-pdf-20260115-v01.pdf)
-- [PNL COO — Governance Console (PDF)](/assets/docs/dlhub-pnlcoo-wp-governance-console-pdf-20260115-v01.pdf)
+- <a href="/assets/docs/dlhub-xr-wp-ecosystem-overview-pdf-20260115-v01.pdf" download="dlhub-xr-wp-ecosystem-overview-pdf-20260115-v01.pdf">XR Ecosystem — Overview (PDF)</a>
+- <a href="/assets/docs/dlhub-xr-wp-roadmap-vision-pdf-20260115-v01.pdf" download="dlhub-xr-wp-roadmap-vision-pdf-20260115-v01.pdf">XR Ecosystem — Roadmap & Vision (PDF)</a>
+- <a href="/assets/docs/dlhub-pnlcoo-wp-governance-console-pdf-20260115-v01.pdf" download="dlhub-pnlcoo-wp-governance-console-pdf-20260115-v01.pdf">PNL COO — Governance Console (PDF)</a>
 
 > Notes  
 > - Visitor-facing downloads prioritize PDF.  
@@ -27,11 +27,11 @@ lead: >-
 ## XR Ecosystem Library (Specs / Architecture)
 
 ### Whitepapers (PDF)
-- [XR — PPP (PDF)](/assets/docs/dlhub-xr-wp-ppp-pdf-20260115-v01.pdf)
+- <a href="/assets/docs/dlhub-xr-wp-ppp-pdf-20260115-v01.pdf" download="dlhub-xr-wp-ppp-pdf-20260115-v01.pdf">XR — PPP (PDF)</a>
 
 ### Specs / Architecture (PDF)
-- [XR — VPP Spec (PDF)](/assets/docs/dlhub-xr-spec-vpp-pdf-20260115-v01.pdf)
-- [XR — FPGA / ASIC Spec (PDF)](/assets/docs/dlhub-xr-spec-fpga-asic-pdf-20260115-v01.pdf)
+- <a href="/assets/docs/dlhub-xr-spec-vpp-pdf-20260115-v01.pdf" download="dlhub-xr-spec-vpp-pdf-20260115-v01.pdf">XR — VPP Spec (PDF)</a>
+- <a href="/assets/docs/dlhub-xr-spec-fpga-asic-pdf-20260115-v01.pdf" download="dlhub-xr-spec-fpga-asic-pdf-20260115-v01.pdf">XR — FPGA / ASIC Spec (PDF)</a>
 
 ---
 
@@ -41,15 +41,18 @@ lead: >-
 > Videos are kept short (60–90 seconds) to control size. If storage limits arise later, these links can switch to external hosting without changing page structure.
 
 ### Investor Demos
-- [XR — Product Traction (90s, MP4)](/assets/media/dlhub-xr-demo-investor-product-traction-90s-20260115-v01.mp4)
-- [XR — Team Intro (60s, MP4)](/assets/media/dlhub-xr-demo-investor-team-intro-60s-20260115-v01.mp4)
+- <a href="/assets/media/dlhub-xr-demo-investor-product-traction-90s-20260115-v01.mp4" download="dlhub-xr-demo-investor-product-traction-90s-20260115-v01.mp4">XR — Product Traction (90s, MP4)</a>
+- <a href="/assets/media/dlhub-xr-demo-investor-team-intro-60s-20260115-v01.mp4" download="dlhub-xr-demo-investor-team-intro-60s-20260115-v01.mp4">XR — Team Intro (60s, MP4)</a>
 
 ### Employer Demos (Profile)
-- [Career Highlights (90s, MP4)](/assets/media/dlhub-profile-demo-employer-career-highlights-90s-20260115-v01.mp4)
-- [Major Achievements (90s, MP4)](/assets/media/dlhub-profile-demo-employer-major-achievements-90s-20260115-v01.mp4)
+- <a href="/assets/media/dlhub-profile-demo-employer-career-highlights-90s-20260115-v01.mp4" download="dlhub-profile-demo-employer-career-highlights-90s-20260115-v01.mp4">Career Highlights (90s, MP4)</a>
+- <a href="/assets/media/dlhub-profile-demo-employer-major-achievements-90s-20260115-v01.mp4" download="dlhub-profile-demo-employer-major-achievements-90s-20260115-v01.mp4">Major Achievements (90s, MP4)</a>
 
 ---
 
 ## Brand Kit
 
-- [Brand Kit (ZIP)](/assets/kit/dlhub-brand-kit-20260115-v)
+- <a href="/assets/kit/dlhub-brand-kit-20260115-v01.zip" download="dlhub-brand-kit-20260115-v01.zip">Brand Kit (ZIP)</a>
+
+---
+
