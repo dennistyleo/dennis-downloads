@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>{{ page.title }} · Dennis Downloads</title>
 
-  <!-- CACHE-BUST：每次改版就改 v= 后面那串 -->
-  <link rel="stylesheet" href="/assets/css/site.css?v=20260115-07">
+  <!-- cache-bust: bump version when CSS changes -->
+  <link rel="stylesheet" href="/assets/css/site.css?v=20260115-07" />
 </head>
 
 <body>
   <div class="topbar">
     <div class="brand">
-      <!-- logo 路径固定放 /assets/logo.png -->
+      <!-- cache-bust logo -->
       <img class="logo" src="/assets/logo.png?v=20260115-07" alt="Dennis Leo" />
       <div class="brandtext">
         <div class="name">Dennis Leo</div>
@@ -40,7 +40,9 @@
       {{ content }}
     </section>
 
-    <div class="footer">© {{ "now" | date: "%Y" }} Dennis Leo · downloads.dennisleo.com</div>
+    <div class="footer">
+      © {{ "now" | date: "%Y" }} Dennis Leo · downloads.dennisleo.com
+    </div>
   </main>
 </body>
 </html>
