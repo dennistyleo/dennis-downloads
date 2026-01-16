@@ -39,6 +39,14 @@ lead: >-
 
 > Private demos are provided as direct MP4 downloads (not public YouTube).  
 > Videos are kept short (60–90 seconds) to control size. If storage limits arise later, these links can switch to external hosting without changing page structure.
+> ### Investor Demos
+
+- <a href="/assets/media/dlhub-xr-demo-investor-product-traction-90s-20260115-v01.mp4" download="dlhub-xr-demo-investor-product-traction-90s-20260115-v01.mp4">XR — Product Traction (90s, MP4)</a>
+- <a href="/assets/media/dlhub-xr-demo-investor-team-intro-60s-20260115-v01.mp4" download="dlhub-xr-demo-investor-team-intro-60s-20260115-v01.mp4">XR — Team Intro (60s, MP4)</a>
+- <a href="/assets/media/dlhub-xr-demo-investor-xrshow-ep01-full-20260116-v01.mp4" download="dlhub-xr-demo-investor-xrshow-ep01-full-20260116-v01.mp4">XRShow — EP01 (Full, MP4)</a>
+
+<small>If any MP4 plays in your browser, open the player menu (⋯) → Download.</small>
+
 
 ### Investor Demos
 - <a href="/assets/media/dlhub-xr-demo-investor-product-traction-90s-20260115-v01.mp4" download="dlhub-xr-demo-investor-product-traction-90s-20260115-v01.mp4">XR — Product Traction (90s, MP4)</a>
