@@ -1,57 +1,101 @@
 ---
 layout: default
 title: Documents & Media
-lead: >-
+lead: >
   Significant materials for download — whitepapers, specs, and private demo videos.
   Support / Contact: dennis@dennisleo.com
 ---
 
 # Documents & Media
 
-{{ page.lead }}
+Significant materials for download — whitepapers, specs, and private demo videos.  
+Support / Contact: **dennis@dennisleo.com**
+
+> Notes on downloads (GitHub Pages behavior):  
+> - **PDF / MP4 may open in the browser** (expected). Use the viewer **download icon (⬇︎)** to save.  
+> - If an MP4 starts playing: **⋯ (three dots) → Download**, or **right-click the link → Save Link As…**
 
 ---
 
 ## Featured Documents
 
-- <a href="/assets/docs/dlhub-xr-wp-ecosystem-overview-pdf-20260115-v01.pdf" download="dlhub-xr-wp-ecosystem-overview-pdf-20260115-v01.pdf">XR Ecosystem — Overview (PDF)</a>
-- <a href="/assets/docs/dlhub-xr-wp-roadmap-vision-pdf-20260115-v01.pdf" download="dlhub-xr-wp-roadmap-vision-pdf-20260115-v01.pdf">XR Ecosystem — Roadmap & Vision (PDF)</a>
-- <a href="/assets/docs/dlhub-pnlcoo-wp-governance-console-pdf-20260115-v01.pdf" download="dlhub-pnlcoo-wp-governance-console-pdf-20260115-v01.pdf">PNL COO — Governance Console (PDF)</a>
-
-> Notes  
-> - Visitor-facing downloads prioritize PDF.  
-> - Spec packs are published as PDF (ZIP reserved for multi-file kits only).
+- **XR Governance — Uptime (Whitepaper)** *(PDF · 20260116 · v01)*  
+  **View:** / **Download:**  
+  - View: `/assets/docs/dlhub-xr-wp-governance-uptime-pdf-20260116-v01.pdf`  
+  - Download: `/assets/docs/dlhub-xr-wp-governance-uptime-pdf-20260116-v01.pdf`  
+  <small>Tip: opens in browser; use ⬇︎ to download.</small>
 
 ---
 
 ## XR Ecosystem Library (Specs / Architecture)
 
-### Whitepapers (PDF)
-- <a href="/assets/docs/dlhub-xr-wp-ppp-pdf-20260115-v01.pdf" download="dlhub-xr-wp-ppp-pdf-20260115-v01.pdf">XR — PPP (PDF)</a>
+<small>Coming soon (links will appear after files are uploaded; naming already locked).</small>
 
-### Specs / Architecture (PDF)
-- <a href="/assets/docs/dlhub-xr-spec-vpp-pdf-20260115-v01.pdf" download="dlhub-xr-spec-vpp-pdf-20260115-v01.pdf">XR — VPP Spec (PDF)</a>
-- <a href="/assets/docs/dlhub-xr-spec-fpga-asic-pdf-20260115-v01.pdf" download="dlhub-xr-spec-fpga-asic-pdf-20260115-v01.pdf">XR — FPGA / ASIC Spec (PDF)</a>
+- **XR Ecosystem — Overview** *(PDF · 20260115 · v01)* — Coming soon  
+  `dlhub-xr-wp-ecosystem-overview-pdf-20260115-v01.pdf`
+
+- **XR Roadmap — Vision** *(PDF · 20260115 · v01)* — Coming soon  
+  `dlhub-xr-wp-roadmap-vision-pdf-20260115-v01.pdf`
+
+- **XR-VPP Spec** *(PDF · 20260115 · v01)* — Coming soon  
+  `dlhub-xr-spec-vpp-pdf-20260115-v01.pdf`
+
+- **PNL-COO Governance Console** *(PDF · 20260115 · v01)* — Coming soon  
+  `dlhub-pnlcoo-wp-governance-console-pdf-20260115-v01.pdf`
+
+- **XR PPP** *(PDF · 20260115 · v01)* — Coming soon  
+  `dlhub-xr-wp-ppp-pdf-20260115-v01.pdf`
+
+- **FPGA / ASIC Spec** *(PDF · 20260115 · v01)* — Coming soon  
+  `dlhub-xr-spec-fpga-asic-pdf-20260115-v01.pdf`
 
 ---
 
 ## Private Demo Videos (MP4 Downloads)
 
-> Private demos are provided as direct MP4 downloads (not public YouTube).  
-> Videos are kept short (60–90 seconds) to control size. If storage limits arise later, these links can switch to external hosting without changing page structure.
-
 ### Investor Demos
-- <a href="/assets/media/dlhub-xr-demo-investor-product-traction-90s-20260115-v01.mp4" download="dlhub-xr-demo-investor-product-traction-90s-20260115-v01.mp4">XR — Product Traction (90s, MP4)</a>
-- <a href="/assets/media/dlhub-xr-demo-investor-team-intro-60s-20260115-v01.mp4" download="dlhub-xr-demo-investor-team-intro-60s-20260115-v01.mp4">XR — Team Intro (60s, MP4)</a>
 
-### Employer Demos (Profile)
-- <a href="/assets/media/dlhub-profile-demo-employer-career-highlights-90s-20260115-v01.mp4" download="dlhub-profile-demo-employer-career-highlights-90s-20260115-v01.mp4">Career Highlights (90s, MP4)</a>
-- <a href="/assets/media/dlhub-profile-demo-employer-major-achievements-90s-20260115-v01.mp4" download="dlhub-profile-demo-employer-major-achievements-90s-20260115-v01.mp4">Major Achievements (90s, MP4)</a>
+- **XRShow — EP01 (Full)** *(MP4 · 20260116 · v01)*  
+  **View / Play:**  
+  - View: `/assets/media/dlhub-xr-demo-investor-xrshow-ep01-full-20260116-v01.mp4`  
+  **Download:**  
+  - Download: `/assets/media/dlhub-xr-demo-investor-xrshow-ep01-full-20260116-v01.mp4`  
+  <small>If it plays: ⋯ → Download, or right-click → Save Link As…</small>
+
+<small>Planned investor short demos (coming soon):</small>
+
+- **Investor — Product Traction (90s)** *(MP4 · 20260115 · v01)* — Coming soon  
+  `dlhub-xr-demo-investor-product-traction-90s-20260115-v01.mp4`
+
+- **Investor — Team Intro (60s)** *(MP4 · 20260115 · v01)* — Coming soon  
+  `dlhub-xr-demo-investor-team-intro-60s-20260115-v01.mp4`
+
+### Employer Demos
+
+- **Career Highlights (90s)** *(MP4 · 20260115 · v01)* — Coming soon  
+  `dlhub-profile-demo-employer-career-highlights-90s-20260115-v01.mp4`
+
+- **Major Achievements (90s)** *(MP4 · 20260115 · v01)* — Coming soon  
+  `dlhub-profile-demo-employer-major-achievements-90s-20260115-v01.mp4`
 
 ---
 
 ## Brand Kit
 
-- <a href="/assets/kit/dlhub-brand-kit-20260115-v01.zip" download="dlhub-brand-kit-20260115-v01.zip">Brand Kit (ZIP)</a>
+<small>ZIP is reserved for multi-file bundles only.</small>
+
+- **Brand Kit** *(ZIP · 20260115 · v01)* — Coming soon  
+  `dlhub-brand-kit-20260115-v01.zip`
 
 ---
+
+## File Naming Standard (Locked)
+
+`dlhub-<domain>-<category>-<topic>-<meta>-<yyyymmdd>-v01.<ext>`
+
+- domain: `xr / pnlcoo / profile / brand`  
+- category: `wp / spec / demo / kit`  
+- meta: `pdf` or `60s/90s`  
+- date: e.g. `20260115` (you will update later)  
+- version: `v01` (content updates → `v02`)
+
