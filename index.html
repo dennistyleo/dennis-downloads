@@ -3,28 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="build" content="2026-01-18-OVERRIDE-v1" />
-  <title>Dennis Leo — Download</title>
+  <title>Dennis Leo — Downloads</title>
 
   <style>
     :root{
       --bg0:#07080a;
       --bg1:#0b0f12;
-      --card:rgba(12,14,16,.66);
-
+      --card:rgba(12,14,16,.70);
       --gold:rgba(180,140,60,.78);
-      --gold2:rgba(180,140,60,.22);
-
-      --white:rgba(255,255,255,.95);
-      --muted:rgba(255,255,255,.70);
+      --gold2:rgba(180,140,60,.24);
+      --white:rgba(255,255,255,.94);
+      --muted:rgba(255,255,255,.72);
+      --shadow:0 18px 44px rgba(0,0,0,.38);
 
       /* Mo-Gold + Neon Green */
       --g0:rgba(88,255,140,1);
       --g1:rgba(8,120,60,1);
-      --gBorder:rgba(88,255,140,.55);
+      --gBorder:rgba(88,255,140,.62);
       --gGlow:rgba(88,255,140,.18);
-
-      --shadow:0 18px 44px rgba(0,0,0,.35);
     }
 
     html,body{height:100%;}
@@ -41,275 +37,420 @@
     a{color:inherit;text-decoration:none;}
     a:hover{text-decoration:none;}
 
-    .wrap{max-width:980px;margin:22px auto 40px;padding:0 18px;}
-    .topbar{
-      display:flex;align-items:center;justify-content:space-between;gap:14px;
-      margin-bottom:18px;
+    .wrap{
+      max-width:1040px;
+      margin:22px auto 40px;
+      padding:0 18px;
     }
 
-    .brand{display:flex;align-items:center;gap:14px;min-width:0;}
-    /* === LOGO size control (你要更大就只改這三行) === */
-    .mark{
-      width:120px;height:120px;border-radius:22px;
+    /* Top bar (logo + brand + actions) */
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      margin:12px 0 18px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+    }
+
+    /* BIG logo (4x-ish) */
+    .logoBox{
+      width:88px;
+      height:88px;
+      border-radius:18px;
       border:1px solid var(--gold2);
       background:rgba(0,0,0,.22);
-      display:grid;place-items:center;
-      box-shadow:0 0 0 2px rgba(180,140,60,.06) inset;
+      box-shadow:0 0 0 2px rgba(180,140,60,.06) inset, 0 14px 32px rgba(0,0,0,.35);
+      display:grid;
+      place-items:center;
+      overflow:hidden;
       flex:0 0 auto;
     }
-    .mark span{
+    .logoImg{
+      width:78px;
+      height:78px;
+      object-fit:contain;
+      display:block;
+      filter:drop-shadow(0 6px 14px rgba(0,0,0,.35));
+    }
+    .logoFallback{
+      width:78px;height:78px;
+      display:none;
+      place-items:center;
       font-weight:900;
-      font-size:56px;
-      letter-spacing:.5px;
-      color:rgba(180,140,60,.95);
-      line-height:1;
-    }
-    .brandtext{min-width:0;}
-    .brandname{font-weight:850;font-size:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-    .brandsub{font-size:12px;color:var(--muted);margin-top:2px;}
-
-    .actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;}
-    .chip{
-      padding:9px 14px;border-radius:999px;
-      border:1px solid var(--gold2);
-      background:rgba(0,0,0,.20);
-      color:rgba(255,255,255,.88);
-      font-weight:700;font-size:13px;
-    }
-    .chip:hover{border-color:rgba(180,140,60,.40);}
-
-    .card{
-      background:var(--card);
-      border:1px solid var(--gold2);
-      border-radius:18px;
-      box-shadow:var(--shadow);
-      padding:18px 18px 16px;
-      backdrop-filter: blur(8px);
-    }
-
-    .hero h1{
-      margin:0;
       font-size:44px;
-      letter-spacing:.2px;
-    }
-    .hero p{
-      margin:10px 0 0;
-      color:var(--muted);
-      line-height:1.45;
-      max-width:78ch;
-    }
-    .support{
-      margin-top:8px;
-      font-size:13px;
-      color:rgba(255,255,255,.86);
-    }
-    .support a{
-      color:var(--g0);
-      border-bottom:1px solid rgba(88,255,140,.25);
-    }
-
-    .note{
-      margin-top:14px;
-      padding:10px 12px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(0,0,0,.18);
-      color:rgba(255,255,255,.82);
-      font-size:12px;
-      line-height:1.45;
-    }
-    .note b{color:rgba(255,255,255,.92);}
-
-    .section{
-      margin-top:16px;
-      border:1px solid var(--gold2);
-      border-radius:16px;
-      overflow:hidden;
-      background:rgba(0,0,0,.16);
-    }
-    .sectionHead{
-      padding:12px 14px;
-      font-size:12px;
-      letter-spacing:.16em;
-      color:rgba(255,255,255,.80);
-      border-bottom:1px solid rgba(180,140,60,.12);
-      display:flex;align-items:center;justify-content:space-between;gap:10px;
-    }
-
-    .row{
-      display:flex;align-items:center;justify-content:space-between;gap:14px;
-      padding:14px;
-      border-top:1px solid rgba(255,255,255,.06);
-    }
-    .row:first-child{border-top:none;}
-    .row:hover{
-      background:linear-gradient(90deg, rgba(88,255,140,.06), rgba(255,170,0,.03));
-    }
-
-    .left{min-width:0;}
-    .title{font-weight:850;font-size:14px;}
-    .meta{margin-top:4px;font-size:12px;color:rgba(255,255,255,.70);display:flex;gap:10px;flex-wrap:wrap;}
-    .pathpill{
-      display:inline-block;
-      margin-top:8px;
-      padding:5px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(0,0,0,.16);
-      color:rgba(255,255,255,.75);
-      font-size:12px;
-      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
-      max-width:72ch;
-      white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-    }
-
-    /* === BUTTONS (active + disabled with SAME hover feedback) === */
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      padding:10px 18px;border-radius:999px;
-      font-weight:900;font-size:13px;
-      letter-spacing:.02em;
-      border:1px solid var(--gBorder);
-      background:linear-gradient(180deg, rgba(88,255,140,.95), rgba(8,120,60,.95));
-      color:#07150d;
-      box-shadow:0 0 0 6px rgba(88,255,140,.10);
-      min-width:110px;
+      color:rgba(180,140,60,.92);
+      letter-spacing:.5px;
       user-select:none;
-      transition:transform .12s ease, filter .12s ease, box-shadow .12s ease, opacity .12s ease;
+    }
+
+    .brandText{min-width:0;}
+    .brandName{
+      font-weight:850;
+      font-size:16px;
+      line-height:1.1;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brandSub{
+      margin-top:4px;
+      font-size:12px;
+      color:var(--muted);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    /* Buttons (ONE unified style for ALL buttons) */
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 16px;
+      border-radius:999px;
+      border:1px solid rgba(180,140,60,.40);
+      background:rgba(0,0,0,.22);
+      color:rgba(255,255,255,.90);
+      box-shadow:0 0 0 2px rgba(180,140,60,.06) inset;
+      font-weight:750;
+      font-size:13px;
+      line-height:1;
+      transition:transform .12s ease, background .12s ease, border-color .12s ease, box-shadow .12s ease, filter .12s ease;
+      user-select:none;
+      cursor:pointer;
     }
     .btn:hover{
+      background:rgba(0,0,0,.32);
+      border-color:rgba(88,255,140,.55);
+      box-shadow:0 0 0 2px rgba(88,255,140,.10) inset, 0 0 0 6px rgba(88,255,140,.05);
       transform:translateY(-1px);
-      filter:brightness(1.05);
-      box-shadow:0 0 0 10px rgba(88,255,140,.14);
     }
-    .btn:active{transform:translateY(0);filter:brightness(.98);}
+    .btn:active{transform:translateY(0px);}
 
-    .btn.is-disabled{
-      border:1px solid rgba(255,255,255,.14);
-      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(0,0,0,.12));
-      color:rgba(255,255,255,.62);
-      box-shadow:none;
-      cursor:not-allowed;
-      opacity:.92;
+    /* Primary “Download” */
+    .btn.primary{
+      border-color:rgba(88,255,140,.62);
+      background:linear-gradient(180deg, rgba(88,255,140,.34), rgba(8,120,60,.28));
+      box-shadow:0 0 0 2px rgba(88,255,140,.10) inset, 0 16px 28px rgba(0,0,0,.30);
+      color:rgba(0,0,0,.92);
+      filter:saturate(1.05);
     }
-    .btn.is-disabled:hover{
-      transform:translateY(-1px);
-      filter:brightness(1.05);
+    .btn.primary:hover{
+      border-color:rgba(88,255,140,.78);
+      box-shadow:0 0 0 2px rgba(88,255,140,.16) inset, 0 0 0 8px rgba(88,255,140,.06), 0 18px 30px rgba(0,0,0,.30);
+      filter:saturate(1.12);
+    }
+
+    /* Disabled “Coming soon” still has hover effect (consistency) */
+    .btn.disabled{
+      opacity:.78;
+      color:rgba(255,255,255,.78);
+      cursor:not-allowed;
+      background:rgba(255,255,255,.06);
+      border-color:rgba(180,140,60,.22);
+      box-shadow:0 0 0 2px rgba(180,140,60,.04) inset;
+    }
+    .btn.disabled:hover{
+      /* keep hover feedback without suggesting it’s clickable */
+      background:rgba(255,255,255,.08);
+      border-color:rgba(180,140,60,.32);
+      box-shadow:0 0 0 2px rgba(180,140,60,.06) inset;
+      transform:none;
+      filter:none;
+    }
+
+    /* Cards */
+    .panel{
+      border-radius:18px;
+      border:1px solid rgba(180,140,60,.26);
+      background:linear-gradient(180deg, rgba(12,14,16,.76), rgba(12,14,16,.62));
+      box-shadow:var(--shadow);
+      padding:22px 22px 18px;
+      position:relative;
+      overflow:hidden;
+    }
+    .panel:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:radial-gradient(820px 380px at 20% 0%, rgba(88,255,140,.06), transparent 58%),
+                 radial-gradient(820px 380px at 85% 5%, rgba(180,140,60,.10), transparent 58%);
+      pointer-events:none;
+    }
+    .panel > *{position:relative;}
+
+    /* Banner (title + short useful line only) */
+    .title{
+      font-size:44px;
+      font-weight:920;
+      letter-spacing:-.6px;
+      margin:2px 0 8px;
+    }
+    .desc{
+      margin:0 0 12px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.5;
+    }
+    .contact{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .contact a{
+      color:var(--g0);
+      border-bottom:1px solid rgba(88,255,140,.30);
+      padding-bottom:1px;
+    }
+
+    .hint{
+      margin:0 0 18px;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid rgba(180,140,60,.18);
+      background:rgba(0,0,0,.20);
+      color:rgba(255,255,255,.82);
+      font-size:12px;
+      line-height:1.5;
+    }
+    .hint b{color:rgba(255,255,255,.92);}
+
+    /* Section box */
+    .section{
+      margin-top:16px;
+      padding:14px 14px 10px;
+      border-radius:16px;
+      border:1px solid rgba(180,140,60,.22);
+      background:rgba(0,0,0,.18);
+    }
+    .sectionHeader{
+      font-size:11px;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.70);
+      margin:0 0 10px;
+    }
+
+    /* Item row */
+    .item{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:14px 12px;
+      border-radius:14px;
+      border:1px solid rgba(180,140,60,.16);
+      background:rgba(0,0,0,.18);
+      margin-bottom:10px;
+      transition:border-color .12s ease, background .12s ease;
+    }
+    .item:hover{
+      background:rgba(0,0,0,.24);
+      border-color:rgba(180,140,60,.26);
+    }
+
+    .itemLeft{min-width:0;}
+    .itemTitle{
+      font-weight:850;
+      font-size:14px;
+      margin:0 0 6px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .meta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      color:rgba(255,255,255,.70);
+      font-size:12px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:5px 9px;
+      border-radius:999px;
+      border:1px solid rgba(180,140,60,.18);
+      background:rgba(255,255,255,.05);
+      color:rgba(255,255,255,.78);
+      font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size:11px;
+      max-width:100%;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
     }
 
     .footer{
-      margin-top:14px;
+      margin-top:16px;
       text-align:center;
-      color:rgba(255,255,255,.55);
+      color:rgba(255,255,255,.46);
       font-size:12px;
     }
 
-    @media (max-width:720px){
-      .mark{width:96px;height:96px;}
-      .mark span{font-size:44px;}
-      .hero h1{font-size:36px;}
-      .row{flex-direction:column;align-items:flex-start;}
-      .btn{width:100%;}
+    @media (max-width: 760px){
+      .title{font-size:36px;}
+      .logoBox{width:72px;height:72px;border-radius:16px;}
+      .logoImg,.logoFallback{width:64px;height:64px;}
+      .item{flex-direction:column;align-items:stretch;}
+      .actions{justify-content:flex-start;}
     }
   </style>
 </head>
 
 <body>
   <div class="wrap">
+    <!-- Top bar -->
     <div class="topbar">
       <div class="brand">
-        <div class="mark" aria-hidden="true"><span>D</span></div>
-        <div class="brandtext">
-          <div class="brandname">Dennis Leo</div>
-          <div class="brandsub">Official Downloads Hub</div>
+        <div class="logoBox" aria-label="Brand logo">
+          <!-- IMPORTANT:
+               Put your real logo at: /assets/brand/logo.png
+               If not found, it auto-falls back to the big “D” mark. -->
+          <img class="logoImg" src="/assets/brand/logo.png" alt="Dennis Leo Logo"
+               onerror="this.style.display='none';document.getElementById('logoFallback').style.display='grid';" />
+          <div id="logoFallback" class="logoFallback">D</div>
+        </div>
+
+        <div class="brandText">
+          <div class="brandName">Dennis Leo</div>
+          <div class="brandSub">Official Downloads Hub</div>
         </div>
       </div>
 
       <div class="actions">
-        <a class="chip" href="https://dennisleo.com/" target="_blank" rel="noopener">Main Site</a>
-        <a class="chip" href="mailto:dennis@dennisleo.com">Contact</a>
+        <!-- Replace these URLs if needed -->
+        <a class="btn" href="https://dennisleo.com/watchers-over-the-frontiers-of-innovation" rel="noopener">Main Site</a>
+        <a class="btn" href="mailto:dennis@dennisleo.com">Contact</a>
       </div>
     </div>
 
-    <div class="card hero">
-      <h1>Download</h1>
-      <p>Materials for download: documents (PDF), media (MP4), and ZIP packages.</p>
-      <div class="support">Support / Contact: <a href="mailto:dennis@dennisleo.com">dennis@dennisleo.com</a></div>
+    <!-- Main panel -->
+    <div class="panel">
+      <!-- Banner -->
+      <div class="title">Download</div>
+      <p class="desc">Documents (PDF), media (MP4), and ZIP packages.</p>
+      <p class="contact">Support / Contact: <a href="mailto:dennis@dennisleo.com">dennis@dennisleo.com</a></p>
 
-      <div class="note">
+      <div class="hint">
         <b>Download instruction:</b> Click the <b>Download</b> button.
         If a PDF/MP4 opens in the browser, use the viewer’s download icon (⬇︎) to save.
         To force save: right-click the <b>Download</b> button → <b>Save Link As…</b>
       </div>
 
-      <!-- ===== DOCUMENTS (PDF) ===== -->
-      <div class="section" style="margin-top:18px;">
-        <div class="sectionHead">
-          <span>DOCUMENTS (PDF)</span>
+      <!-- DOCUMENTS -->
+      <div class="section" id="documents">
+        <div class="sectionHeader">Documents (PDF)</div>
+
+        <div class="item">
+          <div class="itemLeft">
+            <div class="itemTitle">XR Governance — Uptime (Whitepaper)</div>
+            <div class="meta">
+              <span>PDF</span>
+              <span>•</span>
+              <span>20260116</span>
+              <span>•</span>
+              <span>v01</span>
+              <span class="pill">/assets/docs/dlhub-xr-wp-governance-uptime-pdf-20260116-v01.pdf</span>
+            </div>
+          </div>
+          <div class="itemRight">
+            <a class="btn primary" href="/assets/docs/dlhub-xr-wp-governance-uptime-pdf-20260116-v01.pdf">Download</a>
+          </div>
         </div>
 
-        <div class="row">
-          <div class="left">
-            <div class="title">XR Governance — Uptime (Whitepaper)</div>
-            <div class="meta"><span>PDF</span><span>20260116</span><span>v01</span></div>
-            <div class="pathpill">/assets/docs/dlhub-xr-wp-governance-uptime-pdf-20260116-v01.pdf</div>
+        <div class="item">
+          <div class="itemLeft">
+            <div class="itemTitle">XR Ecosystem — Overview</div>
+            <div class="meta">
+              <span>PDF</span>
+              <span>•</span>
+              <span>20260115</span>
+              <span>•</span>
+              <span>v01</span>
+              <span class="pill">/assets/docs/dlhub-xr-wp-ecosystem-overview-pdf-20260115-v01.pdf</span>
+            </div>
           </div>
-          <a class="btn" href="/assets/docs/dlhub-xr-wp-governance-uptime-pdf-20260116-v01.pdf" target="_blank" rel="noopener">Download</a>
+          <div class="itemRight">
+            <span class="btn disabled">Coming soon</span>
+          </div>
         </div>
 
-        <div class="row">
-          <div class="left">
-            <div class="title">XR Ecosystem — Overview</div>
-            <div class="meta"><span>PDF</span><span>20260115</span><span>v01</span></div>
-            <div class="pathpill">/assets/docs/dlhub-xr-wp-ecosystem-overview-pdf-20260115-v01.pdf</div>
+        <div class="item" style="margin-bottom:0;">
+          <div class="itemLeft">
+            <div class="itemTitle">XR Roadmap — Vision</div>
+            <div class="meta">
+              <span>PDF</span>
+              <span>•</span>
+              <span>20260115</span>
+              <span>•</span>
+              <span>v01</span>
+              <span class="pill">/assets/docs/dlhub-xr-wp-roadmap-vision-pdf-20260115-v01.pdf</span>
+            </div>
           </div>
-          <span class="btn is-disabled" aria-disabled="true">Coming soon</span>
-        </div>
-
-        <div class="row">
-          <div class="left">
-            <div class="title">XR Roadmap — Vision</div>
-            <div class="meta"><span>PDF</span><span>20260115</span><span>v01</span></div>
-            <div class="pathpill">/assets/docs/dlhub-xr-wp-roadmap-vision-pdf-20260115-v01.pdf</div>
+          <div class="itemRight">
+            <span class="btn disabled">Coming soon</span>
           </div>
-          <span class="btn is-disabled" aria-disabled="true">Coming soon</span>
         </div>
       </div>
 
-      <!-- ===== MEDIA (MP4) ===== -->
-      <div class="section" style="margin-top:16px;">
-        <div class="sectionHead">
-          <span>MEDIA (MP4)</span>
-        </div>
+      <!-- MEDIA -->
+      <div class="section" id="media">
+        <div class="sectionHeader">Media (MP4)</div>
 
-        <div class="row">
-          <div class="left">
-            <div class="title">XRSHOW EP01 — Full Video</div>
-            <div class="meta"><span>MP4</span><span>Full</span></div>
-            <!-- 重要：這個檔名/大小寫必須 100% 跟 repo 一致，否則 Pages 一定 404 -->
-            <div class="pathpill">/assets/media/xrshow-ep01-full.mp4</div>
+        <div class="item" style="margin-bottom:0;">
+          <div class="itemLeft">
+            <div class="itemTitle">XRSHOW EP01 — Full Video</div>
+            <div class="meta">
+              <span>MP4</span>
+              <span>•</span>
+              <span>Full</span>
+              <!-- THIS MUST BE YOUR “規範檔名 mp4” -->
+              <span class="pill">/assets/media/dlhub-xr-demo-investor-xrshow-ep01-full-20260116-v01.mp4</span>
+            </div>
           </div>
-          <a class="btn" href="/assets/media/xrshow-ep01-full.mp4" target="_blank" rel="noopener">Download</a>
+          <div class="itemRight">
+            <a class="btn primary"
+               href="/assets/media/dlhub-xr-demo-investor-xrshow-ep01-full-20260116-v01.mp4">
+              Download
+            </a>
+          </div>
         </div>
       </div>
 
-      <!-- ===== PACKAGES (ZIP) ===== -->
-      <div class="section" style="margin-top:16px;">
-        <div class="sectionHead">
-          <span>PACKAGES (ZIP)</span>
-        </div>
+      <!-- PACKAGES -->
+      <div class="section" id="packages">
+        <div class="sectionHeader">Packages (ZIP)</div>
 
-        <div class="row">
-          <div class="left">
-            <div class="title">XR Ecosystem Library — Spec Pack</div>
-            <div class="meta"><span>ZIP</span></div>
-            <div class="pathpill">/assets/packages/xr-ecosystem-library-spec-pack.zip</div>
+        <div class="item" style="margin-bottom:0;">
+          <div class="itemLeft">
+            <div class="itemTitle">XR Ecosystem Library — Spec Pack</div>
+            <div class="meta">
+              <span>ZIP</span>
+              <span class="pill">/assets/packages/xr-ecosystem-library-spec-pack.zip</span>
+            </div>
           </div>
-          <span class="btn is-disabled" aria-disabled="true">Coming soon</span>
+          <div class="itemRight">
+            <span class="btn disabled">Coming soon</span>
+          </div>
         </div>
       </div>
 
-      <div class="footer">© 2026 Dennis Leo • downloads.dennisleo.com</div>
+      <div class="footer">© 2026 Dennis Leo · downloads.dennisleo.com</div>
     </div>
   </div>
 </body>
