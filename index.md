@@ -1,3 +1,7 @@
+---
+layout: null
+---
+
 <style>
 :root{
   --bg0:#07080a;
@@ -23,23 +27,26 @@ body{
 }
 
 a{color:inherit;}
-.dl-wrap{max-width:980px;margin:22px auto 40px;padding:0 18px;}
-.dl-topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:16px;}
-.dl-brand{display:flex;align-items:center;gap:10px;}
-.dl-mark{
+.wrap{max-width:980px;margin:22px auto 40px;padding:0 18px;}
+
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:16px;
+}
+.brand{display:flex;align-items:center;gap:10px;}
+.mark{
   width:34px;height:34px;border-radius:10px;
   border:1px solid var(--gold2);
   display:grid;place-items:center;
   background:rgba(0,0,0,.25);
   box-shadow:0 0 0 2px rgba(180,140,60,.06) inset;
 }
-.dl-mark span{font-weight:900;letter-spacing:.5px;color:rgba(180,140,60,.95);}
-.dl-brandname{line-height:1.1;}
-.dl-brandname .t{font-weight:800;font-size:14px;}
-.dl-brandname .s{font-size:12px;color:var(--muted);margin-top:2px;}
+.mark span{font-weight:900;letter-spacing:.5px;color:rgba(180,140,60,.95);}
+.brandname{line-height:1.1;}
+.brandname .t{font-weight:800;font-size:14px;}
+.brandname .s{font-size:12px;color:var(--muted);margin-top:2px;}
 
-.dl-actions{display:flex;gap:10px;flex-wrap:wrap;}
-.dl-pill{
+.actions{display:flex;gap:10px;flex-wrap:wrap;}
+.pill{
   display:inline-flex;align-items:center;justify-content:center;
   padding:9px 12px;border-radius:999px;
   border:1px solid var(--gold2);
@@ -49,14 +56,18 @@ a{color:inherit;}
   box-shadow:0 0 0 2px rgba(180,140,60,.06) inset;
   user-select:none;
 }
-.dl-pill:hover{transform:translateY(-1px);border-color:var(--gold);}
-.dl-pill-green{
-  border-color:rgba(73,255,106,.55);
-  box-shadow:0 0 0 2px rgba(73,255,106,.08) inset;
-}
-.dl-pill-green:hover{border-color:rgba(73,255,106,.95);}
+.pill:hover{transform:translateY(-1px);border-color:var(--gold);}
 
-.dl-card{
+.pill-green{
+  border:1px solid rgba(73,255,106,.55);
+  background:linear-gradient(180deg, rgba(73,255,106,.22), rgba(0,0,0,.18));
+  box-shadow:
+    0 0 0 2px rgba(73,255,106,.10) inset,
+    0 6px 16px rgba(0,0,0,.22);
+}
+.pill-green:hover{border-color:rgba(73,255,106,.95);}
+
+.card{
   border:1px solid var(--gold2);
   border-radius:18px;
   background:var(--card);
@@ -65,11 +76,11 @@ a{color:inherit;}
   margin:14px 0;
 }
 
-.dl-title{font-size:34px;font-weight:850;letter-spacing:.2px;margin:0 0 8px;}
-.dl-sub{color:var(--muted);font-size:13px;line-height:1.6;margin:0;}
-.dl-sub strong{color:var(--white);}
+.title{font-size:34px;font-weight:850;letter-spacing:.2px;margin:0 0 8px;}
+.sub{color:var(--muted);font-size:13px;line-height:1.6;margin:0;}
+.sub strong{color:var(--white);}
 
-.dl-instruction{
+.instruction{
   margin-top:12px;
   padding:12px 14px;
   border-radius:14px;
@@ -80,8 +91,8 @@ a{color:inherit;}
   line-height:1.6;
 }
 
-.dl-section{margin-top:18px;}
-.dl-section h2{
+.section{margin-top:18px;}
+.section h2{
   margin:0 0 10px;
   font-size:12px;
   letter-spacing:1.2px;
@@ -89,14 +100,14 @@ a{color:inherit;}
   text-transform:uppercase;
 }
 
-.dl-list{
+.list{
   border:1px solid rgba(180,140,60,.16);
   border-radius:16px;
   overflow:hidden;
   background:rgba(0,0,0,.12);
 }
 
-.dl-item{
+.item{
   display:flex;
   gap:14px;
   align-items:center;
@@ -104,13 +115,13 @@ a{color:inherit;}
   padding:14px 14px;
   border-top:1px solid rgba(180,140,60,.12);
 }
-.dl-item:first-child{border-top:none;}
+.item:first-child{border-top:none;}
 
-.dl-left{min-width:0;}
-.dl-name{font-weight:850;font-size:13px;margin:0 0 4px;}
-.dl-meta{font-size:12px;color:var(--muted);margin:0;}
-.dl-path{margin-top:8px;font-size:12px;color:rgba(255,255,255,.60);}
-.dl-path code{
+.left{min-width:0;}
+.name{font-weight:850;font-size:13px;margin:0 0 4px;}
+.meta{font-size:12px;color:var(--muted);margin:0;}
+.path{margin-top:8px;font-size:12px;color:rgba(255,255,255,.60);}
+.path code{
   font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
   font-size:11px;
   background:rgba(0,0,0,.22);
@@ -119,7 +130,7 @@ a{color:inherit;}
   border-radius:9px;
 }
 
-.dl-btn{
+.btn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
@@ -139,14 +150,14 @@ a{color:inherit;}
   cursor:pointer;
   user-select:none;
 }
-.dl-btn:hover{
+.btn:hover{
   transform:translateY(-1px);
   border-color:rgba(73,255,106,.95);
   box-shadow:
     0 0 0 2px rgba(73,255,106,.14) inset,
     0 10px 22px rgba(0,0,0,.30);
 }
-.dl-btn-disabled{
+.btn-disabled{
   opacity:.55;
   border-color:rgba(180,140,60,.22);
   background:rgba(0,0,0,.18);
@@ -155,79 +166,78 @@ a{color:inherit;}
   pointer-events:none;
 }
 
-.dl-footer{margin-top:16px;text-align:center;color:rgba(255,255,255,.60);font-size:12px;}
+.footer{margin-top:16px;text-align:center;color:rgba(255,255,255,.60);font-size:12px;}
 
 @media (max-width:640px){
-  .dl-title{font-size:26px;}
-  .dl-item{flex-direction:column;align-items:flex-start;}
+  .title{font-size:26px;}
+  .item{flex-direction:column;align-items:flex-start;}
 }
 </style>
 
-<div class="dl-wrap">
-  <!-- SINGLE topbar (no duplicates) -->
-  <div class="dl-topbar">
-    <div class="dl-brand">
-      <div class="dl-mark" aria-hidden="true"><span>D</span></div>
-      <div class="dl-brandname">
+<div class="wrap">
+  <!-- SINGLE topbar (only one logo + one set of buttons) -->
+  <div class="topbar">
+    <div class="brand">
+      <div class="mark" aria-hidden="true"><span>D</span></div>
+      <div class="brandname">
         <div class="t">Dennis Leo</div>
         <div class="s">Official Downloads Hub</div>
       </div>
     </div>
-    <div class="dl-actions">
-      <a class="dl-pill" href="https://dennisleo.com/watchers-over-the-frontiers-of-innovation" target="_blank" rel="noopener">Main Site</a>
-      <a class="dl-pill dl-pill-green" href="mailto:dennis@dennisleo.com">Contact</a>
+    <div class="actions">
+      <a class="pill" href="https://dennisleo.com/watchers-over-the-frontiers-of-innovation" target="_blank" rel="noopener">Main Site</a>
+      <a class="pill pill-green" href="mailto:dennis@dennisleo.com">Contact</a>
     </div>
   </div>
 
-  <!-- MAIN content card -->
-  <div class="dl-card">
-    <h1 class="dl-title">Downloads</h1>
-    <p class="dl-sub">Significant materials for download — whitepapers, specs, and private demo videos.</p>
-    <p class="dl-sub"><strong>Support / Contact:</strong> <a href="mailto:dennis@dennisleo.com">dennis@dennisleo.com</a></p>
+  <div class="card">
+    <h1 class="title">Downloads</h1>
+    <p class="sub">Significant materials for download — whitepapers, specs, and private demo videos.</p>
+    <p class="sub"><strong>Support / Contact:</strong> <a href="mailto:dennis@dennisleo.com">dennis@dennisleo.com</a></p>
 
-    <div class="dl-instruction">
+    <div class="instruction">
       <strong>Download instruction:</strong> Click the <strong>Download</strong> button.
       If a PDF/MP4 opens in the browser, use the viewer’s download icon (⬇︎).
       To force save: right-click the <strong>Download</strong> button → <strong>Save Link As…</strong>
     </div>
 
-    <div class="dl-section">
+    <div class="section">
       <h2>Featured</h2>
-      <div class="dl-list">
-        <div class="dl-item">
-          <div class="dl-left">
-            <div class="dl-name">XR Governance — Uptime (Whitepaper)</div>
-            <div class="dl-meta">PDF • 20260116 • v01</div>
-            <div class="dl-path"><code>/assets/docs/dlhub-xr-wp-governance-uptime-pdf-20260116-v01.pdf</code></div>
+      <div class="list">
+        <div class="item">
+          <div class="left">
+            <div class="name">XR Governance — Uptime (Whitepaper)</div>
+            <div class="meta">PDF • 20260116 • v01</div>
+            <div class="path"><code>/assets/docs/dlhub-xr-wp-governance-uptime-pdf-20260116-v01.pdf</code></div>
           </div>
-          <a class="dl-btn" href="/assets/docs/dlhub-xr-wp-governance-uptime-pdf-20260116-v01.pdf" download>Download</a>
+          <a class="btn" href="/assets/docs/dlhub-xr-wp-governance-uptime-pdf-20260116-v01.pdf" download>Download</a>
         </div>
       </div>
     </div>
 
-    <div class="dl-section">
+    <div class="section">
       <h2>XR Ecosystem Library (Specs / Architecture)</h2>
-      <div class="dl-list">
-        <div class="dl-item">
-          <div class="dl-left">
-            <div class="dl-name">XR Ecosystem — Overview</div>
-            <div class="dl-meta">PDF • 20260115 • v01</div>
-            <div class="dl-path"><code>dlhub-xr-wp-ecosystem-overview-pdf-20260115-v01.pdf</code></div>
+      <div class="list">
+        <div class="item">
+          <div class="left">
+            <div class="name">XR Ecosystem — Overview</div>
+            <div class="meta">PDF • 20260115 • v01</div>
+            <div class="path"><code>dlhub-xr-wp-ecosystem-overview-pdf-20260115-v01.pdf</code></div>
           </div>
-          <span class="dl-btn dl-btn-disabled">Coming soon</span>
+          <span class="btn btn-disabled">Coming soon</span>
         </div>
 
-        <div class="dl-item">
-          <div class="dl-left">
-            <div class="dl-name">XR Roadmap — Vision</div>
-            <div class="dl-meta">PDF • 20260115 • v01</div>
-            <div class="dl-path"><code>dlhub-xr-wp-roadmap-vision-pdf-20260115-v01.pdf</code></div>
+        <div class="item">
+          <div class="left">
+            <div class="name">XR Roadmap — Vision</div>
+            <div class="meta">PDF • 20260115 • v01</div>
+            <div class="path"><code>dlhub-xr-wp-roadmap-vision-pdf-20260115-v01.pdf</code></div>
           </div>
-          <span class="dl-btn dl-btn-disabled">Coming soon</span>
+          <span class="btn btn-disabled">Coming soon</span>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="dl-footer">© 2026 Dennis Leo • downloads.dennisleo.com</div>
+  <div class="footer">© 2026 Dennis Leo • downloads.dennisleo.com</div>
 </div>
