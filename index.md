@@ -3,18 +3,18 @@
     --bg0:#07080a;
     --bg1:#0b0f12;
     --card:rgba(12,14,16,.62);
+
     --gold:rgba(180,140,60,.78);
     --gold2:rgba(180,140,60,.35);
-    --white:rgba(255,255,255,.92);
-    --muted:rgba(255,255,255,.62);
     --line:rgba(180,140,60,.22);
 
+    --white:rgba(255,255,255,.92);
+    --muted:rgba(255,255,255,.62);
+
     --green:rgba(80,255,120,.92);
-    --green2:rgba(80,255,120,.22);
     --shadow:0 18px 44px rgba(0,0,0,.35);
   }
 
-  /* page */
   body{
     margin:0;
     color:var(--white);
@@ -26,12 +26,12 @@
   }
 
   .dl-wrap{max-width:960px;margin:26px auto 64px;padding:0 18px;}
+
+  /* TOP BAR (ONLY ONCE) */
   .dl-topbar{
     display:flex;align-items:center;justify-content:space-between;
     gap:16px;margin-bottom:14px;
   }
-
-  /* brand */
   .dl-brand{display:flex;align-items:center;gap:10px;}
   .dl-mark{
     width:30px;height:30px;border-radius:999px;
@@ -46,7 +46,6 @@
   .dl-brand-title{font-weight:800;font-size:14px;letter-spacing:.2px;margin:0;}
   .dl-brand-sub{font-size:12px;color:var(--muted);margin:2px 0 0;}
 
-  /* top actions */
   .dl-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;}
   .dl-pill{
     display:inline-flex;align-items:center;justify-content:center;
@@ -74,7 +73,7 @@
       0 0 22px rgba(80,255,120,.16);
   }
 
-  /* cards */
+  /* CARDS */
   .dl-card{
     border:1px solid var(--gold2);
     border-radius:18px;
@@ -83,18 +82,28 @@
     padding:22px 22px;
     margin:14px 0;
   }
+
+  /* HEADER AREA */
   .dl-hero h1{
-    margin:0 0 8px;
+    margin:0 0 10px;
     font-size:34px;
     letter-spacing:.2px;
   }
-  .dl-hero p{margin:6px 0;color:var(--muted);font-size:13px;line-height:1.55;}
-  .dl-hero .dl-tip{
-    margin-top:10px;
-    color:rgba(255,255,255,.70);
-    font-size:12.5px;
+
+  /* Instruction box (TOP, meaningful) */
+  .dl-instruct{
+    border:1px solid var(--line);
+    border-radius:16px;
+    background:rgba(0,0,0,.18);
+    padding:14px 16px;
   }
-  .dl-hero .dl-tip b{color:var(--white);}
+  .dl-instruct p{
+    margin:6px 0;
+    color:var(--muted);
+    font-size:13px;
+    line-height:1.55;
+  }
+  .dl-instruct b{color:var(--white);}
 
   .dl-label{
     margin:0 0 10px;
@@ -104,10 +113,9 @@
     letter-spacing:.55px;
     text-transform:uppercase;
   }
-
   .dl-divider{height:1px;background:var(--line);margin:12px 0 0;}
 
-  /* download rows */
+  /* Download rows */
   .dl-item{
     display:flex;align-items:center;justify-content:space-between;
     gap:14px;
@@ -130,7 +138,7 @@
     font-size:12px;
   }
 
-  /* download button */
+  /* Buttons */
   .dl-btn{
     display:inline-flex;align-items:center;justify-content:center;
     padding:10px 16px;border-radius:12px;
@@ -163,7 +171,6 @@
     pointer-events:none;
   }
 
-  /* footer */
   .dl-footer{
     text-align:center;
     color:var(--muted);
@@ -180,6 +187,7 @@
 </style>
 
 <div class="dl-wrap">
+  <!-- TOP BAR (ONLY ONCE) -->
   <div class="dl-topbar">
     <div class="dl-brand">
       <div class="dl-mark">D</div>
@@ -195,18 +203,19 @@
     </div>
   </div>
 
-  <!-- HERO -->
+  <!-- HEADER + INSTRUCTION (MEANINGFUL BOX) -->
   <div class="dl-card dl-hero">
     <h1>Downloads</h1>
-    <p>Significant materials for download — whitepapers, specs, and private demo videos.</p>
-    <p>Support / Contact: <b>dennis@dennisleo.com</b></p>
-    <p class="dl-tip">
-      <b>Download tip:</b> Click the <b>Download</b> button. If the file opens in the browser, use the viewer download icon (⬇︎) to save.
-      To force save: right-click the <b>Download</b> button → <b>Save Link As…</b>
-    </p>
+
+    <div class="dl-instruct">
+      <p><b>Significant materials for download</b> — whitepapers, specs, and private demo videos.</p>
+      <p>Support / Contact: <b>dennis@dennisleo.com</b></p>
+      <p><b>Download tip:</b> Click the <b>Download</b> button. If the file opens in the browser, use the viewer download icon (⬇︎) to save.  
+      To force save: right-click the <b>Download</b> button → <b>Save Link As…</b></p>
+    </div>
   </div>
 
-  <!-- FEATURED -->
+  <!-- LIST -->
   <div class="dl-card">
     <div class="dl-label">Featured</div>
 
