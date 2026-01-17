@@ -206,4 +206,117 @@ a:hover{opacity:.95}
 }
 
 .dl-btn{
-  display:inl
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 14px;
+  border-radius:12px;
+  border:1px solid rgba(80,255,120,.70);
+  background:rgba(0,0,0,.26);
+  color:var(--white);
+  font-weight:950;
+  font-size:12px;
+  cursor:pointer;
+  user-select:none;
+  white-space:nowrap;
+  box-shadow:0 0 0 2px rgba(80,255,120,.10) inset;
+}
+
+.dl-btn:hover{
+  transform:translateY(-1px);
+  border-color:rgba(80,255,120,.95);
+  box-shadow:0 0 0 2px rgba(80,255,120,.18) inset;
+}
+
+.dl-btn-disabled{
+  border-color:rgba(180,140,60,.25);
+  box-shadow:none;
+  opacity:.55;
+  cursor:not-allowed;
+}
+
+.dl-rowlink{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  width:100%;
+}
+
+.dl-footer{
+  margin-top:18px;
+  text-align:center;
+  color:var(--muted);
+  font-size:12px;
+}
+</style>
+
+<div class="dl-wrap">
+
+  <div class="dl-topbar">
+    <div class="dl-brand">
+      <div class="dl-logo">D</div>
+      <div>
+        <div class="dl-brand-name">Dennis Leo</div>
+        <div class="dl-brand-sub">Official Downloads Hub</div>
+      </div>
+    </div>
+    <div class="dl-actions">
+      <a class="dl-pill" href="https://dennisleo.com/watchers-over-the-frontiers-of-innovation" target="_blank" rel="noopener">Main Site</a>
+      <a class="dl-pill dl-pill-green" href="mailto:dennis@dennisleo.com">Contact</a>
+    </div>
+  </div>
+
+  <div class="dl-hero">
+    <h1>Documents & Media</h1>
+    <p>Significant materials for download — whitepapers, specs, and private demo videos.</p>
+    <p class="dl-support">Support / Contact: <a href="mailto:dennis@dennisleo.com">dennis@dennisleo.com</a></p>
+  </div>
+
+  <div class="dl-card">
+    <div class="dl-label">Notes (Browser behavior)</div>
+    <div class="dl-note">
+      PDF / MP4 may open in the browser (expected). If it opens, use the viewer’s download icon (⬇︎) to save.<br/>
+      To force save: right-click the Download button → “Save Link As…”
+    </div>
+  </div>
+
+  <div class="dl-card">
+    <div class="dl-label">Featured Documents</div>
+
+    <!-- Featured: XR Governance — Uptime -->
+    <div class="dl-item">
+      <a class="dl-rowlink" href="/assets/docs/dlhub-xr-wp-governance-uptime-pdf-20260116-v01.pdf" download>
+        <div class="dl-item-left">
+          <div class="dl-title">XR Governance — Uptime (Whitepaper)</div>
+          <div class="dl-meta">PDF • 20260116 • v01</div>
+        </div>
+        <div class="dl-btn">Download</div>
+      </a>
+    </div>
+
+    <div class="dl-divider"></div>
+
+    <div class="dl-label">XR Ecosystem Library (Specs / Architecture)</div>
+
+    <!-- Coming soon items (still look like buttons, but disabled) -->
+    <div class="dl-item" style="opacity:.85">
+      <div class="dl-item-left">
+        <div class="dl-title">XR Ecosystem — Overview</div>
+        <div class="dl-meta">PDF • 20260115 • v01</div>
+      </div>
+      <div class="dl-btn dl-btn-disabled">Coming soon</div>
+    </div>
+
+    <div class="dl-item" style="opacity:.85">
+      <div class="dl-item-left">
+        <div class="dl-title">XR Roadmap — Vision</div>
+        <div class="dl-meta">PDF • 20260115 • v01</div>
+      </div>
+      <div class="dl-btn dl-btn-disabled">Coming soon</div>
+    </div>
+
+  </div>
+
+  <div class="dl-footer">© 2026 Dennis Leo • downloads.dennisleo.com</div>
+</div>
