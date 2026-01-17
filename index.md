@@ -1,252 +1,233 @@
 <style>
-  :root{
-    --bg0:#07080a;
-    --bg1:#0b0f12;
-    --card:rgba(12,14,16,.62);
+:root{
+  --bg0:#07080a;
+  --bg1:#0b0f12;
+  --card:rgba(12,14,16,.65);
+  --gold:rgba(180,140,60,.85);
+  --gold2:rgba(180,140,60,.28);
+  --white:rgba(255,255,255,.95);
+  --muted:rgba(255,255,255,.72);
+  --shadow:0 18px 44px rgba(0,0,0,.35);
+  --green:rgba(73,255,106,1);
+}
 
-    --gold:rgba(180,140,60,.78);
-    --gold2:rgba(180,140,60,.35);
-    --line:rgba(180,140,60,.22);
+html,body{height:100%;}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Helvetica,Arial,"PingFang TC","Noto Sans TC",sans-serif;
+  color:var(--white);
+  background:
+    radial-gradient(1200px 720px at 15% 12%, rgba(0,255,128,.10), transparent 55%),
+    radial-gradient(900px 560px at 92% 18%, rgba(255,170,0,.12), transparent 55%),
+    linear-gradient(180deg,var(--bg0),var(--bg1));
+}
 
-    --white:rgba(255,255,255,.92);
-    --muted:rgba(255,255,255,.62);
+a{color:inherit;}
+.dl-wrap{max-width:980px;margin:22px auto 40px;padding:0 18px;}
+.dl-topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:16px;}
+.dl-brand{display:flex;align-items:center;gap:10px;}
+.dl-mark{
+  width:34px;height:34px;border-radius:10px;
+  border:1px solid var(--gold2);
+  display:grid;place-items:center;
+  background:rgba(0,0,0,.25);
+  box-shadow:0 0 0 2px rgba(180,140,60,.06) inset;
+}
+.dl-mark span{font-weight:900;letter-spacing:.5px;color:rgba(180,140,60,.95);}
+.dl-brandname{line-height:1.1;}
+.dl-brandname .t{font-weight:800;font-size:14px;}
+.dl-brandname .s{font-size:12px;color:var(--muted);margin-top:2px;}
 
-    --green:rgba(80,255,120,.92);
-    --shadow:0 18px 44px rgba(0,0,0,.35);
-  }
+.dl-actions{display:flex;gap:10px;flex-wrap:wrap;}
+.dl-pill{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:9px 12px;border-radius:999px;
+  border:1px solid var(--gold2);
+  background:rgba(0,0,0,.22);
+  text-decoration:none;
+  font-weight:800;font-size:12px;letter-spacing:.25px;
+  box-shadow:0 0 0 2px rgba(180,140,60,.06) inset;
+  user-select:none;
+}
+.dl-pill:hover{transform:translateY(-1px);border-color:var(--gold);}
+.dl-pill-green{
+  border-color:rgba(73,255,106,.55);
+  box-shadow:0 0 0 2px rgba(73,255,106,.08) inset;
+}
+.dl-pill-green:hover{border-color:rgba(73,255,106,.95);}
 
-  body{
-    margin:0;
-    color:var(--white);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Helvetica,Arial,"PingFang TC","Noto Sans TC",sans-serif;
-    background:
-      radial-gradient(1100px 760px at 18% 8%, rgba(40,170,70,.20), transparent 58%),
-      radial-gradient(980px 660px at 82% 12%, rgba(200,140,40,.18), transparent 60%),
-      linear-gradient(180deg,var(--bg0),var(--bg1));
-  }
+.dl-card{
+  border:1px solid var(--gold2);
+  border-radius:18px;
+  background:var(--card);
+  box-shadow:var(--shadow);
+  padding:22px 22px;
+  margin:14px 0;
+}
 
-  .dl-wrap{max-width:960px;margin:26px auto 64px;padding:0 18px;}
+.dl-title{font-size:34px;font-weight:850;letter-spacing:.2px;margin:0 0 8px;}
+.dl-sub{color:var(--muted);font-size:13px;line-height:1.6;margin:0;}
+.dl-sub strong{color:var(--white);}
 
-  /* TOP BAR (ONLY ONCE) */
-  .dl-topbar{
-    display:flex;align-items:center;justify-content:space-between;
-    gap:16px;margin-bottom:14px;
-  }
-  .dl-brand{display:flex;align-items:center;gap:10px;}
-  .dl-mark{
-    width:30px;height:30px;border-radius:999px;
-    display:flex;align-items:center;justify-content:center;
-    border:1px solid var(--gold2);
-    background:rgba(0,0,0,.22);
-    color:var(--gold);
-    font-weight:900;
-    box-shadow:0 0 0 2px rgba(180,140,60,.10) inset;
-  }
-  .dl-brand-text{line-height:1.15;}
-  .dl-brand-title{font-weight:800;font-size:14px;letter-spacing:.2px;margin:0;}
-  .dl-brand-sub{font-size:12px;color:var(--muted);margin:2px 0 0;}
+.dl-instruction{
+  margin-top:12px;
+  padding:12px 14px;
+  border-radius:14px;
+  border:1px solid rgba(180,140,60,.18);
+  background:rgba(0,0,0,.18);
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.6;
+}
 
-  .dl-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;}
-  .dl-pill{
-    display:inline-flex;align-items:center;justify-content:center;
-    padding:9px 14px;border-radius:999px;
-    border:1px solid var(--gold2);
-    background:rgba(0,0,0,.22);
-    color:var(--white);
-    text-decoration:none;
-    font-weight:850;font-size:12px;
-    box-shadow:0 0 0 2px rgba(180,140,60,.10) inset;
-    transition:transform .12s ease, border-color .12s ease, box-shadow .12s ease;
-  }
-  .dl-pill:hover{transform:translateY(-1px);border-color:var(--gold);}
-  .dl-pill-green{
-    border-color:rgba(80,255,120,.88);
-    background:linear-gradient(180deg, rgba(80,255,120,.30), rgba(80,255,120,.10));
-    box-shadow:
-      0 0 0 2px rgba(80,255,120,.18) inset,
-      0 0 18px rgba(80,255,120,.12);
-  }
-  .dl-pill-green:hover{
-    border-color:rgba(80,255,120,1);
-    box-shadow:
-      0 0 0 2px rgba(80,255,120,.20) inset,
-      0 0 22px rgba(80,255,120,.16);
-  }
+.dl-section{margin-top:18px;}
+.dl-section h2{
+  margin:0 0 10px;
+  font-size:12px;
+  letter-spacing:1.2px;
+  color:rgba(255,255,255,.78);
+  text-transform:uppercase;
+}
 
-  /* CARDS */
-  .dl-card{
-    border:1px solid var(--gold2);
-    border-radius:18px;
-    background:var(--card);
-    box-shadow:var(--shadow);
-    padding:22px 22px;
-    margin:14px 0;
-  }
+.dl-list{
+  border:1px solid rgba(180,140,60,.16);
+  border-radius:16px;
+  overflow:hidden;
+  background:rgba(0,0,0,.12);
+}
 
-  /* HEADER AREA */
-  .dl-hero h1{
-    margin:0 0 10px;
-    font-size:34px;
-    letter-spacing:.2px;
-  }
+.dl-item{
+  display:flex;
+  gap:14px;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 14px;
+  border-top:1px solid rgba(180,140,60,.12);
+}
+.dl-item:first-child{border-top:none;}
 
-  /* Instruction box (TOP, meaningful) */
-  .dl-instruct{
-    border:1px solid var(--line);
-    border-radius:16px;
-    background:rgba(0,0,0,.18);
-    padding:14px 16px;
-  }
-  .dl-instruct p{
-    margin:6px 0;
-    color:var(--muted);
-    font-size:13px;
-    line-height:1.55;
-  }
-  .dl-instruct b{color:var(--white);}
+.dl-left{min-width:0;}
+.dl-name{font-weight:850;font-size:13px;margin:0 0 4px;}
+.dl-meta{font-size:12px;color:var(--muted);margin:0;}
+.dl-path{margin-top:8px;font-size:12px;color:rgba(255,255,255,.60);}
+.dl-path code{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  font-size:11px;
+  background:rgba(0,0,0,.22);
+  border:1px solid rgba(180,140,60,.12);
+  padding:2px 6px;
+  border-radius:9px;
+}
 
-  .dl-label{
-    margin:0 0 10px;
-    color:var(--muted);
-    font-size:12px;
-    font-weight:900;
-    letter-spacing:.55px;
-    text-transform:uppercase;
-  }
-  .dl-divider{height:1px;background:var(--line);margin:12px 0 0;}
+.dl-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:10px 14px;
+  border-radius:12px;
+  border:1px solid rgba(73,255,106,.55);
+  background:linear-gradient(180deg, rgba(73,255,106,.25), rgba(0,0,0,.18));
+  box-shadow:
+    0 0 0 2px rgba(73,255,106,.08) inset,
+    0 6px 16px rgba(0,0,0,.25);
+  text-decoration:none;
+  font-weight:900;
+  font-size:12px;
+  letter-spacing:.3px;
+  white-space:nowrap;
+  cursor:pointer;
+  user-select:none;
+}
+.dl-btn:hover{
+  transform:translateY(-1px);
+  border-color:rgba(73,255,106,.95);
+  box-shadow:
+    0 0 0 2px rgba(73,255,106,.14) inset,
+    0 10px 22px rgba(0,0,0,.30);
+}
+.dl-btn-disabled{
+  opacity:.55;
+  border-color:rgba(180,140,60,.22);
+  background:rgba(0,0,0,.18);
+  box-shadow:none;
+  cursor:not-allowed;
+  pointer-events:none;
+}
 
-  /* Download rows */
-  .dl-item{
-    display:flex;align-items:center;justify-content:space-between;
-    gap:14px;
-    padding:14px 14px;
-    border:1px solid var(--line);
-    border-radius:14px;
-    background:rgba(0,0,0,.18);
-    margin:12px 0;
-  }
-  .dl-left{min-width:0;}
-  .dl-name{
-    margin:0;
-    font-weight:900;
-    font-size:13px;
-    letter-spacing:.15px;
-  }
-  .dl-meta{
-    margin-top:6px;
-    color:var(--muted);
-    font-size:12px;
-  }
+.dl-footer{margin-top:16px;text-align:center;color:rgba(255,255,255,.60);font-size:12px;}
 
-  /* Buttons */
-  .dl-btn{
-    display:inline-flex;align-items:center;justify-content:center;
-    padding:10px 16px;border-radius:12px;
-    text-decoration:none;
-    font-weight:950;font-size:12px;
-    border:1px solid rgba(80,255,120,.90);
-    color:var(--white);
-    background:linear-gradient(180deg, rgba(80,255,120,.30), rgba(80,255,120,.08));
-    box-shadow:
-      0 0 0 2px rgba(80,255,120,.14) inset,
-      0 0 18px rgba(80,255,120,.10);
-    cursor:pointer;
-    white-space:nowrap;
-    transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
-  }
-  .dl-btn:hover{
-    transform:translateY(-1px);
-    border-color:rgba(80,255,120,1);
-    box-shadow:
-      0 0 0 2px rgba(80,255,120,.18) inset,
-      0 0 22px rgba(80,255,120,.14);
-  }
-
-  .dl-btn-disabled{
-    border:1px solid rgba(255,255,255,.16);
-    color:rgba(255,255,255,.55);
-    background:rgba(255,255,255,.06);
-    box-shadow:none;
-    cursor:not-allowed;
-    pointer-events:none;
-  }
-
-  .dl-footer{
-    text-align:center;
-    color:var(--muted);
-    font-size:12px;
-    margin-top:18px;
-  }
-
-  @media (max-width:720px){
-    .dl-hero h1{font-size:28px;}
-    .dl-item{flex-direction:column;align-items:stretch;}
-    .dl-btn,.dl-btn-disabled{width:100%;}
-    .dl-actions{justify-content:flex-start;}
-  }
+@media (max-width:640px){
+  .dl-title{font-size:26px;}
+  .dl-item{flex-direction:column;align-items:flex-start;}
+}
 </style>
 
 <div class="dl-wrap">
-  <!-- TOP BAR (ONLY ONCE) -->
+  <!-- SINGLE topbar (no duplicates) -->
   <div class="dl-topbar">
     <div class="dl-brand">
-      <div class="dl-mark">D</div>
-      <div class="dl-brand-text">
-        <p class="dl-brand-title">Dennis Leo</p>
-        <p class="dl-brand-sub">Official Downloads Hub</p>
+      <div class="dl-mark" aria-hidden="true"><span>D</span></div>
+      <div class="dl-brandname">
+        <div class="t">Dennis Leo</div>
+        <div class="s">Official Downloads Hub</div>
       </div>
     </div>
-
     <div class="dl-actions">
       <a class="dl-pill" href="https://dennisleo.com/watchers-over-the-frontiers-of-innovation" target="_blank" rel="noopener">Main Site</a>
       <a class="dl-pill dl-pill-green" href="mailto:dennis@dennisleo.com">Contact</a>
     </div>
   </div>
 
-  <!-- HEADER + INSTRUCTION (MEANINGFUL BOX) -->
-  <div class="dl-card dl-hero">
-    <h1>Downloads</h1>
-
-    <div class="dl-instruct">
-      <p><b>Significant materials for download</b> — whitepapers, specs, and private demo videos.</p>
-      <p>Support / Contact: <b>dennis@dennisleo.com</b></p>
-      <p><b>Download tip:</b> Click the <b>Download</b> button. If the file opens in the browser, use the viewer download icon (⬇︎) to save.  
-      To force save: right-click the <b>Download</b> button → <b>Save Link As…</b></p>
-    </div>
-  </div>
-
-  <!-- LIST -->
+  <!-- MAIN content card -->
   <div class="dl-card">
-    <div class="dl-label">Featured</div>
+    <h1 class="dl-title">Downloads</h1>
+    <p class="dl-sub">Significant materials for download — whitepapers, specs, and private demo videos.</p>
+    <p class="dl-sub"><strong>Support / Contact:</strong> <a href="mailto:dennis@dennisleo.com">dennis@dennisleo.com</a></p>
 
-    <div class="dl-item">
-      <div class="dl-left">
-        <p class="dl-name">XR Governance — Uptime (Whitepaper)</p>
-        <div class="dl-meta">PDF · 20260116 · v01</div>
-      </div>
-      <a class="dl-btn" href="/assets/docs/dlhub-xr-wp-governance-uptime-pdf-20260116-v01.pdf" target="_blank" rel="noopener">Download</a>
+    <div class="dl-instruction">
+      <strong>Download instruction:</strong> Click the <strong>Download</strong> button.
+      If a PDF/MP4 opens in the browser, use the viewer’s download icon (⬇︎).
+      To force save: right-click the <strong>Download</strong> button → <strong>Save Link As…</strong>
     </div>
 
-    <div class="dl-divider"></div>
-
-    <div class="dl-label" style="margin-top:16px;">XR Ecosystem Library (Specs / Architecture)</div>
-
-    <div class="dl-item">
-      <div class="dl-left">
-        <p class="dl-name">XR Ecosystem — Overview</p>
-        <div class="dl-meta">PDF · 20260115 · v01</div>
+    <div class="dl-section">
+      <h2>Featured</h2>
+      <div class="dl-list">
+        <div class="dl-item">
+          <div class="dl-left">
+            <div class="dl-name">XR Governance — Uptime (Whitepaper)</div>
+            <div class="dl-meta">PDF • 20260116 • v01</div>
+            <div class="dl-path"><code>/assets/docs/dlhub-xr-wp-governance-uptime-pdf-20260116-v01.pdf</code></div>
+          </div>
+          <a class="dl-btn" href="/assets/docs/dlhub-xr-wp-governance-uptime-pdf-20260116-v01.pdf" download>Download</a>
+        </div>
       </div>
-      <span class="dl-btn dl-btn-disabled">Coming soon</span>
     </div>
 
-    <div class="dl-item">
-      <div class="dl-left">
-        <p class="dl-name">XR Roadmap — Vision</p>
-        <div class="dl-meta">PDF · 20260115 · v01</div>
+    <div class="dl-section">
+      <h2>XR Ecosystem Library (Specs / Architecture)</h2>
+      <div class="dl-list">
+        <div class="dl-item">
+          <div class="dl-left">
+            <div class="dl-name">XR Ecosystem — Overview</div>
+            <div class="dl-meta">PDF • 20260115 • v01</div>
+            <div class="dl-path"><code>dlhub-xr-wp-ecosystem-overview-pdf-20260115-v01.pdf</code></div>
+          </div>
+          <span class="dl-btn dl-btn-disabled">Coming soon</span>
+        </div>
+
+        <div class="dl-item">
+          <div class="dl-left">
+            <div class="dl-name">XR Roadmap — Vision</div>
+            <div class="dl-meta">PDF • 20260115 • v01</div>
+            <div class="dl-path"><code>dlhub-xr-wp-roadmap-vision-pdf-20260115-v01.pdf</code></div>
+          </div>
+          <span class="dl-btn dl-btn-disabled">Coming soon</span>
+        </div>
       </div>
-      <span class="dl-btn dl-btn-disabled">Coming soon</span>
     </div>
   </div>
 
-  <div class="dl-footer">© 2026 Dennis Leo · downloads.dennisleo.com</div>
+  <div class="dl-footer">© 2026 Dennis Leo • downloads.dennisleo.com</div>
 </div>
