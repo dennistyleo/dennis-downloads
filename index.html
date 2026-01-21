@@ -367,32 +367,6 @@
     </div>
   </div>
 
-  <script>
-    // Auto-detect logo file (no spec drifting, no manual edits needed).
-    // If none exists, fallback shows the big "D".
-    (function(){
-      const candidates = [
-     
-        "assets/logo.png",
-       
-      ];
-
-      const imgEl = document.getElementById("brandLogo");
-      const fallbackEl = document.getElementById("logoFallback");
-
-      function tryLoad(i){
-        if(i >= candidates.length) return;
-        const test = new Image();
-        test.onload = function(){
-          imgEl.src = candidates[i];
-          imgEl.style.display = "block";
-          fallbackEl.style.display = "none";
-        };
-        test.onerror = function(){ tryLoad(i+1); };
-        test.src = candidates[i] + "?v=" + Date.now();
-      }
-      tryLoad(0);
-    })();
-  </script>
+  
 </body>
 </html>
