@@ -75,19 +75,11 @@
       width:100%;
       height:100%;
       object-fit:cover;
-      display:none; /* show only when loaded */
+      display:block; /* ALWAYS show; no JS switching */
     }
+    /* keep fallback style defined, but not used */
     .logoFallback{
-      width:100%;
-      height:100%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:900;
-      letter-spacing:.5px;
-      color:rgba(180,140,60,.92);
-      font-size:56px;
-      user-select:none;
+      display:none;
     }
 
     .brandText{min-width:0;}
@@ -239,8 +231,8 @@
     <div class="topbar">
       <div class="brand">
         <div class="logoBox" aria-label="Brand logo">
-          <img id="brandLogo" class="logoImg" alt="Dennis Leo logo" />
-          <div id="logoFallback" class="logoFallback">D</div>
+          <!-- FIXED logo source: dennis-downloads/assets/logo.png -->
+          <img class="logoImg" src="assets/logo.png" alt="Dennis Leo logo" />
         </div>
 
         <div class="brandText">
@@ -284,18 +276,19 @@
               Download
             </a>
           </div>
-        <div class="item">
-  <div class="meta">
-    <p class="title">XR-VPP — Whitepaper</p>
-    <p class="sub">
-      <span>PDF</span><span>·</span><span>20260120</span><span>·</span><span>v01.1</span>
-      <span class="path">assets/docs/dlhub-xr-wp-xr-vpp-20260120-v01.1.pdf</span>
-    </p>
-  </div>
-  <a class="btn"
-     href="assets/docs/dlhub-xr-wp-xr-vpp-20260120-v01.1.pdf"
-     download="dlhub-xr-wp-xr-vpp-20260120-v01.1.pdf">Download</a>
-</div>
+
+          <div class="item">
+            <div class="meta">
+              <p class="title">XR-VPP — Whitepaper</p>
+              <p class="sub">
+                <span>PDF</span><span>·</span><span>20260120</span><span>·</span><span>v01.1</span>
+                <span class="path">assets/docs/dlhub-xr-wp-xr-vpp-20260120-v01.1.pdf</span>
+              </p>
+            </div>
+            <a class="btn"
+               href="assets/docs/dlhub-xr-wp-xr-vpp-20260120-v01.1.pdf"
+               download="dlhub-xr-wp-xr-vpp-20260120-v01.1.pdf">Download</a>
+          </div>
 
           <div class="item">
             <div class="meta">
@@ -335,7 +328,6 @@
               </p>
             </div>
 
-            <!-- IMPORTANT: use your规范 file name as download file -->
             <a class="btn"
                href="assets/media/dlhub-xr-demo-investor-xrshow-ep01-full-20260116-v01.mp4"
                download="dlhub-xr-demo-investor-xrshow-ep01-full-20260116-v01.mp4">
@@ -366,7 +358,5 @@
       <footer>© 2026 Dennis Leo • downloads.dennisleo.com</footer>
     </div>
   </div>
-
-  
 </body>
 </html>
