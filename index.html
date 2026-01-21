@@ -6,6 +6,9 @@
   <meta name="color-scheme" content="dark" />
   <title>Dennis Leo — Downloads</title>
 
+  <!-- Preload logo to reduce fallback "D" flash -->
+  <link rel="preload" as="image" href="assets/logo.png?v=20260121-1848" />
+
   <style>
     :root{
       --bg0:#07080a;
@@ -75,11 +78,19 @@
       width:100%;
       height:100%;
       object-fit:cover;
-      display:block; /* ALWAYS show; no JS switching */
+      display:none; /* show only when loaded */
     }
-    /* keep fallback style defined, but not used */
     .logoFallback{
-      display:none;
+      width:100%;
+      height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:900;
+      letter-spacing:.5px;
+      color:rgba(180,140,60,.92);
+      font-size:56px;
+      user-select:none;
     }
 
     .brandText{min-width:0;}
@@ -231,8 +242,16 @@
     <div class="topbar">
       <div class="brand">
         <div class="logoBox" aria-label="Brand logo">
-          <!-- FIXED logo source: dennis-downloads/assets/logo.png -->
-          <img class="logoImg" src="assets/logo.png" alt="Dennis Leo logo" />
+          <!-- FIXED PATH: assets/logo.png -->
+          <img
+            id="brandLogo"
+            class="logoImg"
+            alt="Dennis Leo logo"
+            src="assets/logo.png?v=20260121-1848"
+            onload="this.style.display='block'; document.getElementById('logoFallback').style.display='none';"
+            onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='flex';"
+          />
+          <div id="logoFallback" class="logoFallback">D</div>
         </div>
 
         <div class="brandText">
