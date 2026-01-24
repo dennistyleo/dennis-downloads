@@ -1,0 +1,19 @@
+{
+  "mode": "internal_proxy",
+  "axes": {
+    "x_growth": "MoM/QoQ/YoY growth per CYCLE",
+    "y_contribution": "revenue share (default) or GP share"
+  },
+  "thresholds": {
+    "share_high_customer": 0.15,
+    "share_high_product": 0.2,
+    "growth_high": 0.08
+  },
+  "quadrants": {
+    "STAR": "high_share & high_growth",
+    "CASH_COW": "high_share & low_growth",
+    "QUESTION_MARK": "low_share & high_growth",
+    "DOG": "low_share & low_growth"
+  },
+  "single_period_policy": "do not force quadrant; mark Not disclosed/Single-period"
+}

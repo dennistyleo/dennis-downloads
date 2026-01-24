@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="/static/favicon.png" />
+  <title>PNL-COO Governance Console (MVP)</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <!-- Banner (LOCKED): left logo on pure black, center title/subtitle, right 3 equal buttons -->
+  <header class="banner">
+    <div class="banner-left">
+      <div class="logo-slab">
+        <img class="logo" src="/static/logo.png" alt="PNL-COO" />
+      </div>
+    </div>
+
+    <div class="banner-center">
+      <div class="brand-title" id="brandTitle">PNL-COO</div>
+      <div class="brand-subtitle" id="brandSubtitle">P&amp;L → Evidence Pull → Governance Actions</div>
+    </div>
+
+    <div class="banner-right">
+      <button id="btnAiMock" class="led-btn" type="button" aria-pressed="true">AI Mock</button>
+      <button id="btnLangEn" class="led-btn" type="button" aria-pressed="true">EN</button>
+      <button id="btnLangZh" class="led-btn" type="button" aria-pressed="false">繁中</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- Left: AI Cockpit -->
+    <aside class="sidebar" aria-label="AI cockpit">
+      <div class="prompt-head" id="promptHead">PROMPT INPUT: ASK A COO QUESTION / GIVE AN INSTRUCTION</div>
+
+      <!-- Governance filters (v0.4.6) -->
+      <div class="filter-row" id="filterRow">
+        <button id="btnCycle" class="filter-btn" type="button">CYCLE: MOM</button>
+        <button id="btnTerms" class="filter-btn" type="button">TERMS: AUTO</button>
+        <button id="btnMode" class="filter-btn" type="button">MODE: AUTO</button>
+        <button id="btnHold" class="filter-btn" type="button">HOLD: OFF</button>
+      </div>
+
+      <!-- One large cockpit log (single primary frame) -->
+      <div id="cockpitLog" class="cockpit-log" aria-label="AI cockpit log"></div>
+
+      <!-- Actions -->
+      <div class="btn-row">
+        <button id="btnUpload" class="btn" type="button">Upload Finance Report</button>
+        <button id="btnGenerate" class="btn primary" type="button">Generate</button>
+        <input id="fileInput" type="file" class="hidden" />
+      </div>
+
+      <!-- Chat input (kept compact; log is the main reading area) -->
+      <div class="chatbar" aria-label="AI chat input">
+        <input id="chatInput" class="chatInput" type="text" placeholder="Ask a COO question…" />
+        <button id="btnSend" class="chatbtn" type="button" aria-label="Send">↑</button>
+      </div>
+
+      <div class="status" id="statusLine"></div>
+    </aside>
+
+    <!-- Right: 5-card dashboard -->
+    <section class="cards" aria-label="dashboard cards">
+      <div class="card card-score" id="card-score" role="button" tabindex="0">
+        <div class="card-hd" id="scoreHd">Executive Scoreboard</div>
+        <div class="kpi-row" id="kpiRow"></div>
+        <div class="card-bd">
+          <img class="chart" id="scoreChartMain" alt="Executive chart" />
+          <div class="card-note" id="scoreNarrative"></div>
+        </div>
+      </div>
+
+      <div class="card" id="card-radar" role="button" tabindex="0">
+        <div class="card-hd" id="radarHd">Causality Radar</div>
+        <div class="card-bd">
+          <div class="radar-two">
+            <div class="radar-pane">
+              <div class="radar-cap" id="radarCapA">A) 8-axis Radar</div>
+              <img class="chart" id="radarChart" alt="Radar chart" />
+            </div>
+            <div class="radar-pane">
+              <div class="radar-cap" id="radarCapB">B) Event → Org Link Map</div>
+              <img class="chart" id="linkMapChart" alt="Event-org link map" />
+            </div>
+          </div>
+          <div class="card-note" id="radarLegend"></div>
+        </div>
+      </div>
+
+      <div class="card" id="card-cash" role="button" tabindex="0">
+        <div class="card-hd" id="cashHd">Cash Cycle Drivers</div>
+        <div class="card-bd">
+          <img class="chart" id="cashChart" alt="Cash cycle drivers" />
+          <div class="card-note" id="cashNote"></div>
+        </div>
+      </div>
+
+      <div class="card" id="card-evidence" role="button" tabindex="0">
+        <div class="card-hd" id="evidenceHd">Evidence Pull</div>
+        <div class="card-bd">
+          <img class="chart" id="evidenceChart" alt="Evidence ledger" />
+          <div class="card-note" id="evidenceNote"></div>
+        </div>
+      </div>
+
+      <div class="card" id="card-task" role="button" tabindex="0">
+        <div class="card-hd" id="taskHd">Solution Taskforce Matrix</div>
+        <div class="card-bd">
+          <img class="chart" id="taskChart" alt="Taskforce matrix" />
+          <div class="card-note" id="taskNote"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Focus pane (opens when a card is clicked) -->
+    <section class="focus" id="focus" aria-hidden="true">
+      <div class="focus-hd">
+        <div id="focusTitle">Focused View</div>
+        <button class="btn mini" id="btnBack" type="button">Back</button>
+      </div>
+      <div class="focus-bd" id="focusBody"></div>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

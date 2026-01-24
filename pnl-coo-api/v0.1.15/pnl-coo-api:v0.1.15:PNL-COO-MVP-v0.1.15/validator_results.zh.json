@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "file_id": "8df630a9-eec6-47f9-a1e6-81e0dc7ac56c",
+    "sample": "/mnt/data/NEW-201708_monthly review_financial_Causality.xlsx",
+    "analysis_status": "PARTIAL",
+    "pass": true
+  },
+  "results": [
+    {
+      "check_id": "VLD-UPLOAD-001",
+      "status": "PASS",
+      "detail": "upload status=200"
+    },
+    {
+      "check_id": "VLD-ANALYZE-001",
+      "status": "PASS",
+      "detail": "analyze status=200"
+    },
+    {
+      "check_id": "VLD-CHART-001",
+      "status": "PASS",
+      "detail": "/api/chart/scoreboard status=200 ct=image/png"
+    },
+    {
+      "check_id": "VLD-EMPTY-001",
+      "status": "PASS",
+      "detail": "/api/chart/scoreboard bytes=30462"
+    },
+    {
+      "check_id": "VLD-CHART-001",
+      "status": "PASS",
+      "detail": "/api/chart/radar status=200 ct=image/png"
+    },
+    {
+      "check_id": "VLD-EMPTY-001",
+      "status": "PASS",
+      "detail": "/api/chart/radar bytes=124240"
+    },
+    {
+      "check_id": "VLD-CHART-001",
+      "status": "PASS",
+      "detail": "/api/chart/linkmap status=200 ct=image/png"
+    },
+    {
+      "check_id": "VLD-EMPTY-001",
+      "status": "PASS",
+      "detail": "/api/chart/linkmap bytes=116086"
+    },
+    {
+      "check_id": "VLD-CHART-001",
+      "status": "PASS",
+      "detail": "/api/chart/rev_bridge status=200 ct=image/png"
+    },
+    {
+      "check_id": "VLD-CHART-001",
+      "status": "PASS",
+      "detail": "/api/chart/gm_bridge status=200 ct=image/png"
+    },
+    {
+      "check_id": "VLD-CHART-001",
+      "status": "PASS",
+      "detail": "/api/chart/opex_mix status=200 ct=image/png"
+    },
+    {
+      "check_id": "VLD-CHART-001",
+      "status": "PASS",
+      "detail": "/api/chart/wc_pulse status=200 ct=image/png"
+    },
+    {
+      "check_id": "VLD-CHART-001",
+      "status": "PASS",
+      "detail": "/api/chart/bcg_customers status=200 ct=image/png"
+    },
+    {
+      "check_id": "VLD-CHAT-000",
+      "status": "PASS",
+      "detail": "chat status=200"
+    },
+    {
+      "check_id": "VLD-AI-001",
+      "status": "PASS",
+      "detail": "reply must include system status and no forbidden phrases"
+    }
+  ]
+}

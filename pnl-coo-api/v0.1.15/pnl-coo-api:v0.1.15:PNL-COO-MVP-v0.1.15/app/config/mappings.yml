@@ -1,0 +1,39 @@
+# PNL-COO topology / term mapping hints (starter)
+# Extend these mappings to auto-map different report formats.
+
+income_statement:
+  revenue:
+    - revenue
+    - sales
+    - net sales
+    - 營收
+    - 銷售
+  gross_profit:
+    - gross profit
+    - 毛利
+  operating_income:
+    - operating income
+    - 營業利益
+  net_income:
+    - net income
+    - 稅後淨利
+    - 淨利
+
+balance_sheet:
+  cash:
+    - cash
+    - 現金
+  accounts_receivable:
+    - accounts receivable
+    - 應收帳款
+  inventory:
+    - inventory
+    - 存貨
+  accounts_payable:
+    - accounts payable
+    - 應付帳款
+
+cashflow:
+  operating_cashflow:
+    - operating cash flow
+    - 營業活動現金流
