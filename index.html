@@ -2,142 +2,415 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Downloads — Dennis Leo</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Download</title>
+  <meta name="robots" content="noindex,nofollow" />
+
   <style>
     :root{
-      --bg:#0b0f0d;
-      --panel:#0f1512;
-      --panel2:#0d120f;
-      --line:rgba(255,255,255,.08);
-      --text:rgba(255,255,255,.92);
-      --muted:rgba(255,255,255,.65);
-      --gold: rgba(198,154,72,.85);
-      --green:#27e27a;
-      --green2:#10b981;
-      --btnText:#06120b;
+      --bg:#070a0b;
+      --card: rgba(18,22,24,.62);
+      --card2: rgba(18,22,24,.48);
+      --stroke: rgba(255,255,255,.10);
+      --stroke2: rgba(255,255,255,.14);
+      --text: rgba(255,255,255,.90);
+      --muted: rgba(255,255,255,.70);
+      --muted2: rgba(255,255,255,.56);
+      --accent: #2df59b;        /* neon green */
+      --accent2:#18c77b;
+      --warning:#ffcc66;
+      --shadow: 0 22px 80px rgba(0,0,0,.55);
+      --radius: 22px;
+      --radius2: 16px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
     }
+
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "PingFang TC", "Microsoft JhengHei", sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(1100px 550px at 20% 0%, rgba(39,226,122,.10), transparent 55%),
-        radial-gradient(900px 500px at 90% 10%, rgba(198,154,72,.10), transparent 55%),
-        linear-gradient(180deg, #050806, #0b0f0d 45%, #050806);
+      font-family: var(--sans);
+      color: var(--text);
+      background: radial-gradient(1200px 700px at 30% 20%, rgba(45,245,155,.10), transparent 60%),
+                  radial-gradient(900px 600px at 78% 35%, rgba(255,220,120,.07), transparent 65%),
+                  linear-gradient(180deg, #050708 0%, #070a0b 40%, #050708 100%);
       min-height:100vh;
-      padding:42px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:48px 18px;
     }
-    .wrap{max-width:980px;margin:0 auto}
+
+    .wrap{
+      width: min(980px, 92vw);
+    }
+
     .card{
-      border:1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
-      border-radius:18px;
-      padding:24px;
-      box-shadow: 0 18px 60px rgba(0,0,0,.45);
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      padding: 34px 34px 24px 34px;
     }
-    h1{margin:0 0 8px;font-size:40px;letter-spacing:.2px}
-    .sub{color:var(--muted);margin:0 0 18px;line-height:1.6}
+
+    h1{
+      margin: 0 0 10px 0;
+      font-size: 44px;
+      letter-spacing: .2px;
+      line-height: 1.05;
+    }
+
+    .subtitle{
+      margin: 0 0 16px 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
     .topbar{
-      display:flex;gap:14px;flex-wrap:wrap;align-items:center;
-      padding:12px 14px;
-      border:1px solid var(--line);
-      border-radius:14px;
-      background: rgba(0,0,0,.25);
-      margin:14px 0 22px;
+      margin: 18px 0 26px 0;
+      background: var(--card2);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius2);
+      padding: 12px 14px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
     }
-    .topbar b{color:rgba(255,255,255,.9)}
+
+    .section{
+      margin-top: 22px;
+    }
+
+    .sectionInner{
+      padding-top: 2px;
+    }
+
     .sectionLabel{
-      font-size:12px; letter-spacing: .18em; text-transform:uppercase;
-      color:rgba(255,255,255,.65);
-      margin:18px 0 10px;
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--muted2);
+      margin: 0 0 10px 2px;
     }
+
     .item{
-      display:flex; justify-content:space-between; align-items:center;
-      gap:14px; flex-wrap:wrap;
-      border:1px solid var(--line);
-      background: linear-gradient(180deg, rgba(0,0,0,.20), rgba(0,0,0,.10));
-      border-radius:16px;
-      padding:16px;
-      margin:10px 0;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      padding: 14px 14px;
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius2);
+      background: rgba(0,0,0,.16);
+      margin-bottom: 10px;
     }
-    .meta{min-width:280px;flex:1}
-    .title{margin:0 0 6px; font-size:16px; font-weight:700}
-    .row{display:flex; gap:10px; flex-wrap:wrap; align-items:center; color:var(--muted); font-size:13px}
+
+    .meta{
+      min-width: 0;
+    }
+
+    .title{
+      margin: 0 0 8px 0;
+      font-size: 16px;
+      font-weight: 650;
+      letter-spacing: .1px;
+    }
+
+    .row{
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      min-width: 0;
+    }
+
     .pill{
-      display:inline-flex;align-items:center; gap:8px;
-      padding:4px 10px;border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.18);
-      font-size:12px; color:rgba(255,255,255,.75)
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke2);
+      color: var(--muted);
+      background: rgba(255,255,255,.05);
+      flex: 0 0 auto;
     }
-    .path{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; font-size:12px; color:rgba(255,255,255,.72)}
-    .actions{display:flex; gap:10px; flex-wrap:wrap}
+
+    .path{
+      font-family: var(--mono);
+      font-size: 12px;
+      color: rgba(255,255,255,.62);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 540px;
+    }
+
+    .actions{
+      flex: 0 0 auto;
+      display:flex;
+      gap: 10px;
+      align-items:center;
+    }
+.actions .btn{ min-width: 110px; }
+
     .btn{
-      appearance:none; border:1px solid rgba(255,255,255,.14);
-      background: rgba(0,0,0,.18);
-      color:rgba(255,255,255,.9);
-      padding:10px 14px;
-      border-radius:999px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke2);
+      color: var(--text);
+      background: rgba(255,255,255,.06);
       text-decoration:none;
-      font-weight:700;
-      font-size:13px;
+      font-size: 13px;
+      font-weight: 650;
+      letter-spacing: .1px;
+      transition: transform .08s ease, background .15s ease, border-color .15s ease, opacity .15s ease;
+      user-select:none;
+      white-space: nowrap;
     }
-    .btn:hover{border-color:rgba(255,255,255,.25)}
+
+    .btn:hover{
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.22);
+      transform: translateY(-1px);
+    }
+
     .btnPrimary{
-      background: linear-gradient(180deg, var(--green), var(--green2));
-      color: var(--btnText);
-      border-color: rgba(0,0,0,.12);
-      box-shadow: 0 10px 24px rgba(39,226,122,.12);
+      background: linear-gradient(180deg, var(--accent) 0%, var(--accent2) 100%);
+      border-color: rgba(0,0,0,.25);
+      color: rgba(0,0,0,.86);
     }
-    .btnPrimary:hover{filter:brightness(1.02)}
-    footer{margin-top:18px; color:rgba(255,255,255,.55); font-size:12px}
-    a{color:inherit}
+
+    .btnPrimary:hover{
+      transform: translateY(-1px);
+      filter: brightness(1.02);
+    }
+
+    .btn.disabled{
+      opacity:.42;
+      pointer-events:none;
+    }
+
+    .note{
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--muted2);
+      line-height: 1.55;
+    }
+
+    footer{
+      margin-top: 18px;
+      font-size: 12px;
+      color: rgba(255,255,255,.55);
+      text-align:left;
+    }
+/* Desktop: make action buttons uniform width (for items with 2 buttons) */
+.actions .btn{ min-width: 110px; }
+
+    @media (max-width: 700px){
+      .item{flex-direction:column; align-items:flex-start;}
+      .actions{width:100%}
+      .btn{flex:1}
+      .path{max-width: 78vw;}
+      h1{font-size: 36px;}
+    }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <div class="card">
       <h1>Download</h1>
-      <p class="sub">
+
+      <p class="subtitle">
         Documents (PDF), media (MP4), and MVP packages (ZIP).<br/>
-        Support / Contact: <a href="mailto:dennis@dennisleo.com"><b>dennis@dennisleo.com</b></a>
+        Support / Contact:
+        <a href="mailto:dennis@dennisleo.com"><b style="color:rgba(255,255,255,.92)">dennis@dennisleo.com</b></a>
       </p>
 
       <div class="topbar">
-        <div><b>How to use:</b> Use <b>Preview / Details</b> to see what’s inside. Use <b>Download</b> only when you’re ready to download.</div>
-      </div>
-
-      <div class="sectionLabel">PNL-COO-API — Demo (MP4)</div>
-
-      <div class="item">
-        <div class="meta">
-          <p class="title">PNL-COO-API — Demo Video</p>
-          <div class="row">
-            <span class="pill">MP4</span>
-            <span class="path">pmlcooapi/demo/pmlcoo%20demo-video.mp4</span>
-          </div>
-        </div>
-        <div class="actions">
-          <a class="btn" href="pmlcooapi/demo/">Preview</a>
-          <a class="btn btnPrimary" href="pmlcooapi/demo/pmlcoo%20demo-video.mp4" download>Download</a>
+        <b>How to use:</b> Use <b>Preview / Details</b> to see what's inside. Use <b>Download</b> only when you're ready.
+        <div class="note">
+          MP4 items intentionally do <b>not</b> provide a direct download button here (to avoid downloading many files without knowing what they are).
+          Open <b>Preview</b> first; if you still need the file, download from the video page.
         </div>
       </div>
 
-      <div class="sectionLabel">PNL-COO-API — MVP Packages (ZIP)</div>
+      <!-- Documents (PDF) -->
+      <div class="section">
+        <div class="sectionInner">
+          <div class="sectionLabel">Documents (PDF)</div>
 
-      <div class="item">
-        <div class="meta">
-          <p class="title">PNL-COO-API — MVP v0.1.15</p>
-          <div class="row">
-            <span class="pill">ZIP</span>
-            <span class="path">pmlcooapi/v0.1.15/PNL-COO-MVP-v0.1.15.zip</span>
+          <div class="item">
+            <div class="meta">
+              <p class="title">XR Spec — PMCAI Overview</p>
+              <div class="row">
+                <span class="pill">PDF</span>
+                <span class="path">/assets/docs/dlhub-xr-spec-pmcai-overview-pdf-20260122-v01.pdf</span>
+              </div>
+            </div>
+            <div class="actions">
+              <a class="btn" href="/assets/docs/dlhub-xr-spec-pmcai-overview-pdf-20260122-v01.pdf" target="_blank" rel="noopener">Preview</a>
+              <a class="btn btnPrimary" href="/assets/docs/dlhub-xr-spec-pmcai-overview-pdf-20260122-v01.pdf" download>Download</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="meta">
+              <p class="title">XR Whitepaper — XR-VPP</p>
+              <div class="row">
+                <span class="pill">PDF</span>
+                <span class="path">/assets/docs/dlhub-xr-wp-xr-vpp-20260120-v01.1.pdf</span>
+              </div>
+            </div>
+            <div class="actions">
+              <a class="btn" href="/assets/docs/dlhub-xr-wp-xr-vpp-20260120-v01.1.pdf" target="_blank" rel="noopener">Preview</a>
+              <a class="btn btnPrimary" href="/assets/docs/dlhub-xr-wp-xr-vpp-20260120-v01.1.pdf" download>Download</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="meta">
+              <p class="title">XR Whitepaper — Governance & Uptime</p>
+              <div class="row">
+                <span class="pill">PDF</span>
+                <span class="path">/assets/docs/dlhub-xr-wp-governance-uptime-pdf-20260116-v01.pdf</span>
+              </div>
+            </div>
+            <div class="actions">
+              <a class="btn" href="/assets/docs/dlhub-xr-wp-governance-uptime-pdf-20260116-v01.pdf" target="_blank" rel="noopener">Preview</a>
+              <a class="btn btnPrimary" href="/assets/docs/dlhub-xr-wp-governance-uptime-pdf-20260116-v01.pdf" download>Download</a>
+            </div>
           </div>
         </div>
-        <div class="actions">
-          <a class="btn" href="pmlcooapi/v0.1.15/">Details</a>
-          <a class="btn btnPrimary" href="pmlcooapi/v0.1.15/PNL-COO-MVP-v0.1.15.zip" download>Download</a>
+      </div>
+
+      <!-- Media (MP4) -->
+      <div class="section">
+        <div class="sectionInner">
+          <div class="sectionLabel">Media (MP4)</div>
+
+          <div class="item">
+            <div class="meta">
+              <p class="title">XR Demo — Investor XRSHOW EP01 (Full)</p>
+              <div class="row">
+                <span class="pill">MP4</span>
+                <span class="path">/assets/media/dlhub-xr-demo-investor-xrshow-ep01-full-20260116-v01.mp4</span>
+              </div>
+            </div>
+            <div class="actions">
+              <a class="btn btnPrimary" href="/assets/media/dlhub-xr-demo-investor-xrshow-ep01-full-20260116-v01.mp4" target="_blank" rel="noopener">Preview</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="meta">
+              <p class="title">XR Demo — Investor (Intelli-Health)</p>
+              <div class="row">
+                <span class="pill">MP4</span>
+                <span class="path">/assets/media/dlhub-xr-demo-investor-intellihealth-20260116.mp4</span>
+              </div>
+            </div>
+            <div class="actions">
+              <a class="btn btnPrimary" href="/assets/media/dlhub-xr-demo-investor-intellihealth-20260116.mp4" target="_blank" rel="noopener">Preview</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="meta">
+              <p class="title">XR Demo — Investor (XRAS EP01)</p>
+              <div class="row">
+                <span class="pill">MP4</span>
+                <span class="path">/assets/media/dlhub-xr-demo-investor-xras-ep01-20260116.mp4</span>
+              </div>
+            </div>
+            <div class="actions">
+              <a class="btn btnPrimary" href="/assets/media/dlhub-xr-demo-investor-xras-ep01-20260116.mp4" target="_blank" rel="noopener">Preview</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PNL-COO-API -->
+<div class="section">
+  <div class="sectionInner">
+    <div class="sectionLabel">PNL-COO-API — Demo (MP4)</div>
+
+    <div class="item">
+      <div class="meta">
+        <p class="title">PNL-COO-API — Demo Video</p>
+        <div class="row">
+          <span class="pill">MP4</span>
+          <span class="path">/pnl-coo-api/demo/PNL-COO-DEMO-VIDEO.mp4</span>
+        </div>
+      </div>
+
+      <!-- MP4: Preview only (no direct download) -->
+      <div class="actions">
+        <a class="btn btnPrimary"
+           href="/pnl-coo-api/demo/PNL-COO-DEMO-VIDEO.mp4"
+           target="_blank" rel="noopener">Preview</a>
+      </div>
+    </div>
+
+    <div class="sectionLabel" style="margin-top:16px;">PNL-COO-API — MVP Packages (ZIP)</div>
+
+    <div class="item">
+      <div class="meta">
+        <p class="title">PNL-COO-API — MVP v0.1.15</p>
+        <div class="row">
+          <span class="pill">ZIP</span>
+          <span class="path">/pnl-coo-api/v0.1.15/PNL-COO-MVP-v0.1.15.zip</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a class="btn"
+           href="/pnl-coo-api/v0.1.15/"
+           target="_blank" rel="noopener">Details</a>
+
+        <a class="btn btnPrimary"
+           href="/pnl-coo-api/v0.1.15/PNL-COO-MVP-v0.1.15.zip"
+           download>Download</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="section">
+        <div class="sectionInner">
+          <div class="sectionLabel">PNL-COO-API — MVP Packages (ZIP)</div>
+
+          <div class="item">
+            <div class="meta">
+              <p class="title">PNL-COO-API — MVP v0.1.15</p>
+              <div class="row">
+                <span class="pill">ZIP</span>
+                <span class="path">/pnl-coo-api/v0.1.15/PNL-COO-MVP-v0.1.15.zip</span>
+              </div>
+            </div>
+            <div class="actions">
+              <a class="btn" href="/pnl-coo-api/v0.1.15/" target="_blank" rel="noopener">Details</a>
+              <a class="btn btnPrimary" href="/pnl-coo-api/v0.1.15/PNL-COO-MVP-v0.1.15.zip" download>Download</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="meta">
+              <p class="title">XR Ecosystem Library — Spec Pack</p>
+              <div class="row">
+                <span class="pill">ZIP</span>
+                <span class="path">Coming soon</span>
+              </div>
+            </div>
+            <div class="actions">
+              <span class="btn disabled">Coming soon</span>
+            </div>
+          </div>
         </div>
       </div>
 
