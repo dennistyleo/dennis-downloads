@@ -206,6 +206,8 @@
       color: rgba(255,255,255,.55);
       text-align:left;
     }
+/* Desktop: make action buttons uniform width (for items with 2 buttons) */
+.actions .btn{ min-width: 110px; }
 
     @media (max-width: 700px){
       .item{flex-direction:column; align-items:flex-start;}
@@ -332,24 +334,51 @@
       </div>
 
       <!-- PNL-COO-API -->
-      <div class="section">
-        <div class="sectionInner">
-          <div class="sectionLabel">PNL-COO-API — Demo (MP4)</div>
+<div class="section">
+  <div class="sectionInner">
+    <div class="sectionLabel">PNL-COO-API — Demo (MP4)</div>
 
-          <div class="item">
-            <div class="meta">
-              <p class="title">PNL-COO-API — Demo Video</p>
-              <div class="row">
-                <span class="pill">MP4</span>
-                <span class="path">/pnl-coo-api/demo/PNL-COO-DEMO-VIDEO.mp4</span>
-              </div>
-            </div>
-            <div class="actions">
-              <a class="btn btnPrimary" href="/pnl-coo-api/demo/PNL-COO-DEMO-VIDEO.mp4" target="_blank" rel="noopener">Preview</a>
-            </div>
-          </div>
+    <div class="item">
+      <div class="meta">
+        <p class="title">PNL-COO-API — Demo Video</p>
+        <div class="row">
+          <span class="pill">MP4</span>
+          <span class="path">/pnl-coo-api/demo/PNL-COO-DEMO-VIDEO.mp4</span>
         </div>
       </div>
+
+      <!-- MP4: Preview only (no direct download) -->
+      <div class="actions">
+        <a class="btn btnPrimary"
+           href="/pnl-coo-api/demo/PNL-COO-DEMO-VIDEO.mp4"
+           target="_blank" rel="noopener">Preview</a>
+      </div>
+    </div>
+
+    <div class="sectionLabel" style="margin-top:16px;">PNL-COO-API — MVP Packages (ZIP)</div>
+
+    <div class="item">
+      <div class="meta">
+        <p class="title">PNL-COO-API — MVP v0.1.15</p>
+        <div class="row">
+          <span class="pill">ZIP</span>
+          <span class="path">/pnl-coo-api/v0.1.15/PNL-COO-MVP-v0.1.15.zip</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a class="btn"
+           href="/pnl-coo-api/v0.1.15/"
+           target="_blank" rel="noopener">Details</a>
+
+        <a class="btn btnPrimary"
+           href="/pnl-coo-api/v0.1.15/PNL-COO-MVP-v0.1.15.zip"
+           download>Download</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 
       <div class="section">
         <div class="sectionInner">
