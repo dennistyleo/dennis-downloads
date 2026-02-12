@@ -18,7 +18,6 @@
       --muted2: rgba(255,255,255,.56);
       --accent: #2df59b;        /* neon green */
       --accent2:#18c77b;
-      --warning:#ffcc66;
       --shadow: 0 22px 80px rgba(0,0,0,.55);
       --radius: 22px;
       --radius2: 16px;
@@ -41,9 +40,7 @@
       padding:48px 18px;
     }
 
-    .wrap{
-      width: min(980px, 92vw);
-    }
+    .wrap{ width: min(980px, 92vw); }
 
     .card{
       background: var(--card);
@@ -69,6 +66,12 @@
       line-height: 1.55;
     }
 
+    .subtitle a{
+      color: rgba(255,255,255,.92);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
     .topbar{
       margin: 18px 0 26px 0;
       background: var(--card2);
@@ -80,13 +83,15 @@
       line-height: 1.45;
     }
 
-    .section{
-      margin-top: 22px;
+    .note{
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--muted2);
+      line-height: 1.55;
     }
 
-    .sectionInner{
-      padding-top: 2px;
-    }
+    .section{ margin-top: 22px; }
+    .sectionInner{ padding-top: 2px; }
 
     .sectionLabel{
       font-size: 12px;
@@ -96,9 +101,10 @@
       margin: 0 0 10px 2px;
     }
 
+    /* KEY FIX: allow wrap so buttons never overlap */
     .item{
       display:flex;
-      align-items:center;
+      align-items:flex-start;
       justify-content:space-between;
       gap: 14px;
       padding: 14px 14px;
@@ -106,11 +112,10 @@
       border-radius: var(--radius2);
       background: rgba(0,0,0,.16);
       margin-bottom: 10px;
+      flex-wrap: wrap;
     }
 
-    .meta{
-      min-width: 0;
-    }
+    .meta{ min-width: 0; }
 
     .title{
       margin: 0 0 8px 0;
@@ -152,7 +157,6 @@
       gap: 10px;
       align-items:center;
     }
-.actions .btn{ min-width: 110px; }
 
     .btn{
       display:inline-flex;
@@ -170,6 +174,7 @@
       transition: transform .08s ease, background .15s ease, border-color .15s ease, opacity .15s ease;
       user-select:none;
       white-space: nowrap;
+      min-width: 110px;
     }
 
     .btn:hover{
@@ -194,28 +199,23 @@
       pointer-events:none;
     }
 
-    .note{
-      margin-top: 8px;
-      font-size: 12px;
-      color: var(--muted2);
-      line-height: 1.55;
-    }
-
     footer{
       margin-top: 18px;
       font-size: 12px;
       color: rgba(255,255,255,.55);
       text-align:left;
     }
-/* Desktop: make action buttons uniform width (for items with 2 buttons) */
-.actions .btn{ min-width: 110px; }
 
+    /* Responsive */
+    @media (max-width: 980px){
+      .actions{ width: 100%; justify-content: flex-end; }
+      .path{ max-width: 72vw; }
+    }
     @media (max-width: 700px){
-      .item{flex-direction:column; align-items:flex-start;}
-      .actions{width:100%}
-      .btn{flex:1}
-      .path{max-width: 78vw;}
       h1{font-size: 36px;}
+      .btn{flex: 1; min-width: 0;}
+      .actions{justify-content: stretch;}
+      .path{max-width: 78vw;}
     }
   </style>
 </head>
@@ -227,23 +227,67 @@
 
       <p class="subtitle">
         Documents (PDF), media (MP4), and MVP packages (ZIP).<br/>
-        Support / Contact:
-        <a href="mailto:dennis@dennisleo.com"><b style="color:rgba(255,255,255,.92)">dennis@dennisleo.com</b></a>
+        Support / Contact: <a href="mailto:dennis@dennisleo.com">dennis@dennisleo.com</a>
       </p>
 
       <div class="topbar">
         <b>How to use:</b> Use <b>Preview / Details</b> to see what's inside. Use <b>Download</b> only when you're ready.
         <div class="note">
-          MP4 items intentionally do <b>not</b> provide a direct download button here (to avoid downloading many files without knowing what they are).
-          Open <b>Preview</b> first; if you still need the file, download from the video page.
+          MP4 items are <b>Preview-only</b> here (no direct download button) to avoid accidental large downloads.
         </div>
       </div>
 
-      <!-- Documents (PDF) -->
+      <!-- =========================
+           DOCUMENTS (PDF/PNG)
+           ========================= -->
       <div class="section">
         <div class="sectionInner">
           <div class="sectionLabel">Documents (PDF)</div>
 
+          <!-- AppWorks -->
+          <div class="item">
+            <div class="meta">
+              <p class="title">AppWorks — Deck</p>
+              <div class="row">
+                <span class="pill">PDF</span>
+                <span class="path">/assets/docs/Deck_AppWorks_02122026_v1.1.pdf</span>
+              </div>
+            </div>
+            <div class="actions">
+              <a class="btn" href="/assets/docs/Deck_AppWorks_02122026_v1.1.pdf" target="_blank" rel="noopener">Preview</a>
+              <a class="btn btnPrimary" href="/assets/docs/Deck_AppWorks_02122026_v1.1.pdf" download>Download</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="meta">
+              <p class="title">AppWorks — OnePager</p>
+              <div class="row">
+                <span class="pill">PDF</span>
+                <span class="path">/assets/docs/OnePage_AppWorks_02122026_v1.0.pdf</span>
+              </div>
+            </div>
+            <div class="actions">
+              <a class="btn" href="/assets/docs/OnePage_AppWorks_02122026_v1.0.pdf" target="_blank" rel="noopener">Preview</a>
+              <a class="btn btnPrimary" href="/assets/docs/OnePage_AppWorks_02122026_v1.0.pdf" download>Download</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="meta">
+              <p class="title">AppWorks — Infographics</p>
+              <div class="row">
+                <span class="pill">PNG</span>
+                <span class="path">/assets/docs/InfoGraphics_AppWorks_02122026_V1.0.png</span>
+              </div>
+            </div>
+            <div class="actions">
+              <a class="btn" href="/assets/docs/InfoGraphics_AppWorks_02122026_V1.0.png" target="_blank" rel="noopener">Preview</a>
+              <a class="btn btnPrimary" href="/assets/docs/InfoGraphics_AppWorks_02122026_V1.0.png" download>Download</a>
+            </div>
+          </div>
+
+          <!-- XR PDFs -->
           <div class="item">
             <div class="meta">
               <p class="title">XR Spec — PMCAI Overview</p>
@@ -285,14 +329,47 @@
               <a class="btn btnPrimary" href="/assets/docs/dlhub-xr-wp-governance-uptime-pdf-20260116-v01.pdf" download>Download</a>
             </div>
           </div>
+
         </div>
       </div>
 
-      <!-- Media (MP4) -->
+      <!-- =========================
+           MEDIA (MP4) — Preview only
+           ========================= -->
       <div class="section">
         <div class="sectionInner">
           <div class="sectionLabel">Media (MP4)</div>
 
+          <!-- AI-Embedded PMC (Investor Access) -->
+          <div class="item">
+            <div class="meta">
+              <p class="title">AI-Embedded PMC — Investor Brief (EN)</p>
+              <div class="row">
+                <span class="pill">MP4</span>
+                <!-- TODO: update filename to your real MP4 -->
+                <span class="path">/assets/media/ai-embedded-pmc-investor-brief-en-20260212-v01.mp4</span>
+              </div>
+            </div>
+            <div class="actions">
+              <a class="btn btnPrimary" href="/assets/media/ai-embedded-pmc-investor-brief-en-20260212-v01.mp4" target="_blank" rel="noopener">Preview</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="meta">
+              <p class="title">AI-Embedded PMC — Investor Brief (ZH)</p>
+              <div class="row">
+                <span class="pill">MP4</span>
+                <!-- TODO: update filename to your real MP4 -->
+                <span class="path">/assets/media/ai-embedded-pmc-investor-brief-zh-20260212-v01.mp4</span>
+              </div>
+            </div>
+            <div class="actions">
+              <a class="btn btnPrimary" href="/assets/media/ai-embedded-pmc-investor-brief-zh-20260212-v01.mp4" target="_blank" rel="noopener">Preview</a>
+            </div>
+          </div>
+
+          <!-- XR Demo -->
           <div class="item">
             <div class="meta">
               <p class="title">XR Demo — Investor XRSHOW EP01 (Full)</p>
@@ -331,59 +408,30 @@
               <a class="btn btnPrimary" href="/assets/media/dlhub-xr-demo-investor-xras-ep01-20260116.mp4" target="_blank" rel="noopener">Preview</a>
             </div>
           </div>
+
+          <!-- PNL-COO-API Demo MP4 -->
+          <div class="item">
+            <div class="meta">
+              <p class="title">PNL-COO-API — Demo Video</p>
+              <div class="row">
+                <span class="pill">MP4</span>
+                <span class="path">/pnl-coo-api/demo/PNL-COO-DEMO-VIDEO.mp4</span>
+              </div>
+            </div>
+            <div class="actions">
+              <a class="btn btnPrimary" href="/pnl-coo-api/demo/PNL-COO-DEMO-VIDEO.mp4" target="_blank" rel="noopener">Preview</a>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <!-- PNL-COO-API -->
-<div class="section">
-  <div class="sectionInner">
-    <div class="sectionLabel">PNL-COO-API — Demo (MP4)</div>
-
-    <div class="item">
-      <div class="meta">
-        <p class="title">PNL-COO-API — Demo Video</p>
-        <div class="row">
-          <span class="pill">MP4</span>
-          <span class="path">/pnl-coo-api/demo/PNL-COO-DEMO-VIDEO.mp4</span>
-        </div>
-      </div>
-
-      <!-- MP4: Preview only (no direct download) -->
-      <div class="actions">
-        <a class="btn btnPrimary"
-           href="/pnl-coo-api/demo/PNL-COO-DEMO-VIDEO.mp4"
-           target="_blank" rel="noopener">Preview</a>
-      </div>
-    </div>
-
-    <div class="sectionLabel" style="margin-top:16px;">PNL-COO-API — MVP Packages (ZIP)</div>
-
-    <div class="item">
-      <div class="meta">
-        <p class="title">PNL-COO-API — MVP v0.1.15</p>
-        <div class="row">
-          <span class="pill">ZIP</span>
-          <span class="path">/pnl-coo-api/v0.1.15/PNL-COO-MVP-v0.1.15.zip</span>
-        </div>
-      </div>
-
-      <div class="actions">
-        <a class="btn"
-           href="/pnl-coo-api/v0.1.15/"
-           target="_blank" rel="noopener">Details</a>
-
-        <a class="btn btnPrimary"
-           href="/pnl-coo-api/v0.1.15/PNL-COO-MVP-v0.1.15.zip"
-           download>Download</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-
+      <!-- =========================
+           MVP PACKAGES (ZIP)
+           ========================= -->
       <div class="section">
         <div class="sectionInner">
-          <div class="sectionLabel">PNL-COO-API — MVP Packages (ZIP)</div>
+          <div class="sectionLabel">MVP Packages (ZIP)</div>
 
           <div class="item">
             <div class="meta">
@@ -411,6 +459,7 @@
               <span class="btn disabled">Coming soon</span>
             </div>
           </div>
+
         </div>
       </div>
 
@@ -419,3 +468,4 @@
   </div>
 </body>
 </html>
+
