@@ -287,3 +287,31 @@ html body main.container section.content.card p a[href^="mailto:"]:hover{
   transform:translateY(-1px) !important;
   box-shadow:0 14px 34px rgba(0,0,0,.35) !important;
 }
+/* ===============================
+   Logo badge fix (NO white plate)
+   Applies to both class names:
+   - .logo (topbar layout)
+   - .brandLogo (your index.html current)
+   =============================== */
+
+.logo,
+.brandLogo{
+  width:34px;
+  height:34px;
+  display:block;
+  object-fit:contain;
+
+  /* dark glass badge, not white */
+  background: rgba(0,0,0,.35) !important;
+  padding: 6px;
+  border-radius: 10px;
+
+  /* cleaner gold edge + subtle neon ring */
+  border: 1px solid rgba(210,177,90,.55) !important;
+  box-shadow:
+    0 8px 18px rgba(0,0,0,.45),
+    0 0 0 3px rgba(57,255,20,.10);
+
+  /* make transparent PNG pop on dark */
+  filter: brightness(1.12) contrast(1.10) drop-shadow(0 2px 10px rgba(0,0,0,.55));
+}
