@@ -18,7 +18,6 @@
       --muted2: rgba(255,255,255,.56);
       --accent: #2df59b;        /* neon green */
       --accent2:#18c77b;
-      --warning:#ffcc66;
       --shadow: 0 22px 80px rgba(0,0,0,.55);
       --radius: 22px;
       --radius2: 16px;
@@ -41,9 +40,7 @@
       padding:48px 18px;
     }
 
-    .wrap{
-      width: min(980px, 92vw);
-    }
+    .wrap{ width: min(980px, 92vw); }
 
     .card{
       background: var(--card);
@@ -80,13 +77,8 @@
       line-height: 1.45;
     }
 
-    .section{
-      margin-top: 22px;
-    }
-
-    .sectionInner{
-      padding-top: 2px;
-    }
+    .section{ margin-top: 22px; }
+    .sectionInner{ padding-top: 2px; }
 
     .sectionLabel{
       font-size: 12px;
@@ -108,9 +100,7 @@
       margin-bottom: 10px;
     }
 
-    .meta{
-      min-width: 0;
-    }
+    .meta{ min-width: 0; }
 
     .title{
       margin: 0 0 8px 0;
@@ -152,6 +142,7 @@
       gap: 10px;
       align-items:center;
     }
+
     .actions .btn{ min-width: 110px; }
 
     .btn{
@@ -237,91 +228,20 @@
         </div>
       </div>
 
-      <!-- Documents (PDF) -->
+      <!-- =========================
+           DOCUMENTS (PDF)
+           ========================= -->
       <div class="section">
         <div class="sectionInner">
           <div class="sectionLabel">Documents (PDF)</div>
 
-          <!-- AppWorks (inserted correctly inside Documents list) -->
-          <div class="item">
-            <div class="meta">
-              <p class="title">AppWorks — Deck</p>
-              <div class="row">
-                <span class="pill">PDF</span>
-                <span class="path">/assets/docs/Deck_AppWorks_02122026_v1.1.pdf</span>
-              </div>
-            </div>
-            <div class="actions">
-              <a class="btn" href="/assets/docs/Deck_AppWorks_02122026_v1.1.pdf" target="_blank" rel="noopener">Preview</a>
-              <a class="btn btnPrimary" href="/assets/docs/Deck_AppWorks_02122026_v1.1.pdf" download>Download</a>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="meta">
-              <p class="title">AppWorks — OnePager</p>
-              <div class="row">
-                <span class="pill">PDF</span>
-                <span class="path">/assets/docs/OnePage_AppWorks_02122026_v1.0.pdf</span>
-              </div>
-            </div>
-            <div class="actions">
-              <a class="btn" href="/assets/docs/OnePage_AppWorks_02122026_v1.0.pdf" target="_blank" rel="noopener">Preview</a>
-              <a class="btn btnPrimary" href="/assets/docs/OnePage_AppWorks_02122026_v1.0.pdf" download>Download</a>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="meta">
-              <p class="title">AppWorks — Infographics</p>
-              <div class="row">
-                <span class="pill">PNG</span>
-                <span class="path">/assets/docs/InfoGraphics_AppWorks_02122026_V1.0.png</span>
-              </div>
-            </div>
-            <div class="actions">
-              <a class="btn" href="/assets/docs/InfoGraphics_AppWorks_02122026_V1.0.png" target="_blank" rel="noopener">Preview</a>
-              <a class="btn btnPrimary" href="/assets/docs/InfoGraphics_AppWorks_02122026_V1.0.png" download>Download</a>
-            </div>
-          </div>
-
-          <!-- Existing XR docs -->
+          <!-- XR PDFs -->
           <div class="item">
             <div class="meta">
               <p class="title">XR Spec — PMCAI Overview</p>
               <div class="row">
                 <span class="pill">PDF</span>
                 <span class="path">/assets/docs/dlhub-xr-spec-pmcai-overview-pdf-20260122-v01.pdf</span>
-                          <div class="sectionLabel" style="margin-top:16px;">AI-Embedded PMC</div>
-
-          <div class="item">
-            <div class="meta">
-              <p class="title">AI-Embedded PMC — Investor Brief (EN)</p>
-              <div class="row">
-                <span class="pill">MP4</span>
-                <span class="path">/assets/media/ai-embedded-pmc-investor-brief-en-20260212-v01.mp4</span>
-              </div>
-            </div>
-            <div class="actions">
-              <a class="btn btnPrimary" href="/assets/media/ai-embedded-pmc-investor-brief-en-20260212-v01.mp4" target="_blank" rel="noopener">Preview</a>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="meta">
-              <p class="title">AI-Embedded PMC — Investor Brief (ZH)</p>
-              <div class="row">
-                <span class="pill">MP4</span>
-                <span class="path">/assets/media/ai-embedded-pmc-investor-brief-zh-20260212-v01.mp4</span>
-              </div>
-            </div>
-            <div class="actions">
-              <a class="btn btnPrimary" href="/assets/media/ai-embedded-pmc-investor-brief-zh-20260212-v01.mp4" target="_blank" rel="noopener">Preview</a>
-            </div>
-          </div>
-
-          <div class="sectionLabel" style="margin-top:16px;">XR Demo</div>
-
               </div>
             </div>
             <div class="actions">
@@ -346,7 +266,7 @@
 
           <div class="item">
             <div class="meta">
-              <p class="title">XR Whitepaper — Governance & Uptime</p>
+              <p class="title">XR Whitepaper — Governance &amp; Uptime</p>
               <div class="row">
                 <span class="pill">PDF</span>
                 <span class="path">/assets/docs/dlhub-xr-wp-governance-uptime-pdf-20260116-v01.pdf</span>
@@ -358,13 +278,99 @@
             </div>
           </div>
 
+          <!-- AppWorks PDFs/PNG -->
+          <div class="sectionLabel" style="margin-top:16px;">AppWorks</div>
+
+          <div class="item">
+            <div class="meta">
+              <p class="title">AppWorks Deck — PDF</p>
+              <div class="row">
+                <span class="pill">PDF</span>
+                <span class="path">/assets/docs/Deck_AppWorks_02122026_v1.1.pdf</span>
+              </div>
+            </div>
+            <div class="actions">
+              <a class="btn" href="/assets/docs/Deck_AppWorks_02122026_v1.1.pdf" target="_blank" rel="noopener">Preview</a>
+              <a class="btn btnPrimary" href="/assets/docs/Deck_AppWorks_02122026_v1.1.pdf" download>Download</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="meta">
+              <p class="title">AppWorks OnePager — PDF</p>
+              <div class="row">
+                <span class="pill">PDF</span>
+                <span class="path">/assets/docs/OnePage_AppWorks_02122026_v1.0.pdf</span>
+              </div>
+            </div>
+            <div class="actions">
+              <a class="btn" href="/assets/docs/OnePage_AppWorks_02122026_v1.0.pdf" target="_blank" rel="noopener">Preview</a>
+              <a class="btn btnPrimary" href="/assets/docs/OnePage_AppWorks_02122026_v1.0.pdf" download>Download</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="meta">
+              <p class="title">AppWorks Infographics — PNG</p>
+              <div class="row">
+                <span class="pill">PNG</span>
+                <span class="path">/assets/docs/InfoGraphics_AppWorks_02122026_V1.0.png</span>
+              </div>
+            </div>
+            <div class="actions">
+              <a class="btn" href="/assets/docs/InfoGraphics_AppWorks_02122026_V1.0.png" target="_blank" rel="noopener">Preview</a>
+              <a class="btn btnPrimary" href="/assets/docs/InfoGraphics_AppWorks_02122026_V1.0.png" download>Download</a>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <!-- Media (MP4) -->
+      <!-- =========================
+           MEDIA (MP4) — PREVIEW ONLY
+           Order: AI-Embedded PMC first, then XR Demos, then PNL-COO demo
+           ========================= -->
       <div class="section">
         <div class="sectionInner">
           <div class="sectionLabel">Media (MP4)</div>
+
+          <!-- AI-Embedded PMC (Investor access) -->
+          <div class="sectionLabel" style="margin-top:16px;">AI-Embedded PMC</div>
+
+          <!-- NOTE:
+               Replace filenames below with your real MP4 names (keep /assets/media/ prefix). -->
+          <div class="item">
+            <div class="meta">
+              <p class="title">AI-Embedded PMC — Investor Brief (EN)</p>
+              <div class="row">
+                <span class="pill">MP4</span>
+                <span class="path">/assets/media/ai-embedded-pmc-investor-brief-en-20260212-v01.mp4</span>
+              </div>
+            </div>
+            <div class="actions">
+              <a class="btn btnPrimary"
+                 href="/assets/media/ai-embedded-pmc-investor-brief-en-20260212-v01.mp4"
+                 target="_blank" rel="noopener">Preview</a>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="meta">
+              <p class="title">AI-Embedded PMC — Investor Brief (ZH)</p>
+              <div class="row">
+                <span class="pill">MP4</span>
+                <span class="path">/assets/media/ai-embedded-pmc-investor-brief-zh-20260212-v01.mp4</span>
+              </div>
+            </div>
+            <div class="actions">
+              <a class="btn btnPrimary"
+                 href="/assets/media/ai-embedded-pmc-investor-brief-zh-20260212-v01.mp4"
+                 target="_blank" rel="noopener">Preview</a>
+            </div>
+          </div>
+
+          <!-- XR Demos -->
+          <div class="sectionLabel" style="margin-top:16px;">XR Demo</div>
 
           <div class="item">
             <div class="meta">
@@ -404,13 +410,9 @@
               <a class="btn btnPrimary" href="/assets/media/dlhub-xr-demo-investor-xras-ep01-20260116.mp4" target="_blank" rel="noopener">Preview</a>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- PNL-COO-API -->
-      <div class="section">
-        <div class="sectionInner">
-          <div class="sectionLabel">PNL-COO-API — Demo (MP4)</div>
+          <!-- PNL-COO demo -->
+          <div class="sectionLabel" style="margin-top:16px;">PNL-COO-API — Demo (MP4)</div>
 
           <div class="item">
             <div class="meta">
@@ -420,39 +422,18 @@
                 <span class="path">/pnl-coo-api/demo/PNL-COO-DEMO-VIDEO.mp4</span>
               </div>
             </div>
-
             <div class="actions">
-              <a class="btn btnPrimary"
-                 href="/pnl-coo-api/demo/PNL-COO-DEMO-VIDEO.mp4"
-                 target="_blank" rel="noopener">Preview</a>
+              <a class="btn btnPrimary" href="/pnl-coo-api/demo/PNL-COO-DEMO-VIDEO.mp4" target="_blank" rel="noopener">Preview</a>
             </div>
           </div>
 
-          <div class="sectionLabel" style="margin-top:16px;">PNL-COO-API — MVP Packages (ZIP)</div>
-
-          <div class="item">
-            <div class="meta">
-              <p class="title">PNL-COO-API — MVP v0.1.15</p>
-              <div class="row">
-                <span class="pill">ZIP</span>
-                <span class="path">/pnl-coo-api/v0.1.15/PNL-COO-MVP-v0.1.15.zip</span>
-              </div>
-            </div>
-
-            <div class="actions">
-              <a class="btn"
-                 href="/pnl-coo-api/v0.1.15/"
-                 target="_blank" rel="noopener">Details</a>
-
-              <a class="btn btnPrimary"
-                 href="/pnl-coo-api/v0.1.15/PNL-COO-MVP-v0.1.15.zip"
-                 download>Download</a>
-            </div>
-          </div>
         </div>
       </div>
 
-      <!-- (Kept as-is: you had a duplicated ZIP section below; not removed to avoid unintended changes) -->
+      <!-- =========================
+           PNL-COO-API — MVP PACKAGES (ZIP)
+           (Single, non-duplicated block)
+           ========================= -->
       <div class="section">
         <div class="sectionInner">
           <div class="sectionLabel">PNL-COO-API — MVP Packages (ZIP)</div>
@@ -483,6 +464,7 @@
               <span class="btn disabled">Coming soon</span>
             </div>
           </div>
+
         </div>
       </div>
 
